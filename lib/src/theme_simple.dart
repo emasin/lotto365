@@ -12,7 +12,7 @@ const _accentBlue = Color(0xff000579e);
 
 class ThemeSimple extends SharedTheme {
   @override
-  String get name => 'Simple';
+  String get name => '미드나잇 블루볼';
 
   const ThemeSimple();
 

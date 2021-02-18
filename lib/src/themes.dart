@@ -8,6 +8,7 @@ import 'theme_simple.dart';
 
 const themes = [
   ThemeSimple(),
-  ThemeSeattle(),
   ThemePlaster(),
+  ThemeSeattle(),
+
 ];

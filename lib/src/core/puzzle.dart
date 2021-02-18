@@ -114,7 +114,7 @@ abstract class Puzzle {
   int get fitness {
     var value = 0;
     for (var i = 0; i < tileCount; i++) {
-      if (!isCorrectPosition(i)) {
+        if (!isCorrectPosition(i)) {
         final correctColumn = i % width;
         final correctRow = i ~/ width;
 

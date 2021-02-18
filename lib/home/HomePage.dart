@@ -32,7 +32,7 @@ class _HomePageBodyState extends State<HomePageBody> {
 
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => PuzzleHome(3,3)),
+            MaterialPageRoute(builder: (context) => PuzzleHome(9,5)),
           );
 
         },),)

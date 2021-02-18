@@ -17,6 +17,13 @@ class PuzzleAnimator implements PuzzleProxy {
   Puzzle _puzzle;
   int _clickCount = 0;
 
+  int _num1=0;
+  int _num2=0;
+  int _num3=0;
+  int _num4=0;
+  int _num5=0;
+  int _num6=0;
+
   bool _stable;
 
   bool get stable => _stable;
@@ -39,6 +46,13 @@ class PuzzleAnimator implements PuzzleProxy {
   int get incorrectTiles => _puzzle.incorrectTiles;
 
   int get clickCount => _clickCount;
+
+  int get num1 => _num1;
+  int get num2 => _num2;
+  int get num3 => _num3;
+  int get num4 => _num4;
+  int get num5 => _num5;
+  int get num6 => _num6;
 
   void reset() => _resetCore();
 
@@ -114,12 +128,47 @@ class PuzzleAnimator implements PuzzleProxy {
     }
   }
 
+
+  void random(){
+    _controller.add(PuzzleEvent.reset);
+  }
   void _resetCore({List<int> source}) {
-    _puzzle = _puzzle.reset(source: source);
+    //_puzzle = _puzzle.reset(source: source);
     _clickCount = 0;
     _lastBadClick = null;
     _badClickCount = 0;
-    _controller.add(PuzzleEvent.reset);
+    Timer _timer = new Timer.periodic(const Duration(milliseconds: 1000), (Timer timer) {
+      _puzzle = _puzzle.reset(source: source);
+      _controller.add(PuzzleEvent.reset);
+      _clickCount++;
+      print(_puzzle[0]);
+
+      if(_clickCount == 1)
+        _num1 = _puzzle[0];
+
+      if(_clickCount == 2)
+        _num2 = _puzzle[0];
+
+      if(_clickCount == 3)
+        _num3 = _puzzle[0];
+
+      if(_clickCount == 4)
+        _num4 = _puzzle[0];
+
+      if(_clickCount == 5)
+        _num5 = _puzzle[0];
+
+      if(_clickCount == 6)
+        _num6 = _puzzle[0];
+
+      if (_clickCount > 5) {
+        _controller.add(PuzzleEvent.noop);
+        _clickCount = 0;
+        timer.cancel();
+      }
+    }
+    );
+    //_controller.add(PuzzleEvent.reset);
   }
 
   bool _clickValue(int value) {

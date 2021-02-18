@@ -39,6 +39,24 @@ class _PuzzleControls extends ChangeNotifier implements PuzzleControls {
   int get clickCount => _parent.puzzle.clickCount;
 
   @override
+  int get num1 => _parent.puzzle.num1;
+
+  @override
+  int get num2 => _parent.puzzle.num2;
+
+  @override
+  int get num3 => _parent.puzzle.num3;
+
+  @override
+  int get num4 => _parent.puzzle.num4;
+
+  @override
+  int get num5 => _parent.puzzle.num5;
+
+  @override
+  int get num6 => _parent.puzzle.num6;
+
+  @override
   int get incorrectTiles => _parent.puzzle.incorrectTiles;
 
   @override
@@ -70,7 +88,8 @@ class PuzzleHomeState extends State
     super.initState();
     _autoPlayListenable = _PuzzleControls(this);
     _ticker ??= createTicker(_onTick);
-    _ensureTicking();
+    _autoPlayListenable.reset();
+   // _ensureTicking();
   }
 
   void _setAutoPlay(bool newValue) {
@@ -101,11 +120,16 @@ class PuzzleHomeState extends State
                 child: FittedBox(
                   fit: BoxFit.cover,
                   child: Image(
-                    image: AssetImage('asset/south-korea.png'),
+                    image: AssetImage('asset/goods.jpeg'),
                   ),
                 ),
               ),
               const LayoutBuilder(builder: _doBuild),
+              SafeArea(child: BackButton(color: Colors.black,onPressed: ()  async {
+
+
+                Navigator.of(context).pop();
+              },))
             ],
           ),
         ),
@@ -121,6 +145,8 @@ class PuzzleHomeState extends State
   }
 
   void _onPuzzleEvent(PuzzleEvent e) {
+
+
     _autoPlayListenable._notify();
     if (e != PuzzleEvent.random) {
       _setAutoPlay(false);

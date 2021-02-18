@@ -9,6 +9,14 @@ abstract class PuzzleControls implements Listenable {
 
   int get clickCount;
 
+  int get num1;
+  int get num2;
+  int get num3;
+  int get num4;
+  int get num5;
+  int get num6;
+
+
   int get incorrectTiles;
 
   bool get autoPlay;

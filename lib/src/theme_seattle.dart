@@ -9,7 +9,7 @@ import 'widgets/decoration_image_plus.dart';
 
 class ThemeSeattle extends SharedTheme {
   @override
-  String get name => 'Seattle';
+  String get name => '명품볼';
 
   const ThemeSeattle();
 
@@ -45,7 +45,7 @@ class ThemeSeattle extends SharedTheme {
         puzzleHeight: puzzle.height,
         pieceIndex: i,
         fit: BoxFit.cover,
-        image: const AssetImage('asset/south-korea.png'));
+        image: const AssetImage('asset/goods.jpeg'));
 
     final correctPosition = puzzle.isCorrectPosition(i);
     final content = createInk(

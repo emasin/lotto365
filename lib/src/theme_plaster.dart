@@ -14,7 +14,7 @@ const _orangeIsh = Color.fromARGB(255, 224, 107, 83);
 
 class ThemePlaster extends SharedTheme {
   @override
-  String get name => 'Plaster';
+  String get name => '핫 오렌지볼';
 
   const ThemePlaster();
 
@@ -59,7 +59,7 @@ class ThemePlaster extends SharedTheme {
     final content = Text(
       (i + 1).toString(),
       style: TextStyle(
-        color: primary ? _yellowIsh : _chocolate,
+        color:  _yellowIsh ,
         fontFamily: 'Plaster',
         fontSize: small ? smallFontSize : largeFontSize,
       ),
@@ -70,9 +70,9 @@ class ThemePlaster extends SharedTheme {
       small,
       i,
       content,
-      color: primary ? _orangeIsh : _yellowIsh,
+      color: _orangeIsh ,
       shape: RoundedRectangleBorder(
-        side: BorderSide(color: primary ? _chocolate : _orangeIsh, width: 5),
+        side: BorderSide(color:  _orangeIsh, width: 5),
         borderRadius: BorderRadius.circular(5),
       ),
     );

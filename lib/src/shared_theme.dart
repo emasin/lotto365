@@ -81,29 +81,47 @@ abstract class SharedTheme {
           onPressed: controls.reset,
           icon: Icon(Icons.refresh, color: puzzleAccentColor),
         ),
-        Checkbox(
-          value: controls.autoPlay,
-          onChanged: controls.setAutoPlayFunction,
-          activeColor: puzzleAccentColor,
-        ),
+
         Expanded(
           child: Container(),
         ),
         Text(
-          controls.clickCount.toString(),
+          controls.num1.toString(),
           textAlign: TextAlign.right,
           style: _infoStyle,
         ),
-        const Text(' Moves'),
-        SizedBox(
-          width: 28,
-          child: Text(
-            controls.incorrectTiles.toString(),
-            textAlign: TextAlign.right,
-            style: _infoStyle,
-          ),
+    const Text(','),
+        Text(
+          controls.num2.toString(),
+          textAlign: TextAlign.right,
+          style: _infoStyle,
         ),
-        const Text(' Tiles left  ')
+    const Text(','),
+        Text(
+          controls.num3.toString(),
+          textAlign: TextAlign.right,
+          style: _infoStyle,
+        ),
+    const Text(','),
+        Text(
+          controls.num4.toString(),
+          textAlign: TextAlign.right,
+          style: _infoStyle,
+        ),
+    const Text(','),
+        Text(
+          controls.num5.toString(),
+          textAlign: TextAlign.right,
+          style: _infoStyle,
+        ),
+    const Text(','),
+        Text(
+          controls.num6.toString(),
+          textAlign: TextAlign.right,
+          style: _infoStyle,
+        ),
+    FlatButton(onPressed: (){}, child: Text("결정"))
+
       ];
 
   Widget tileButtonCore(int i, PuzzleProxy puzzle, bool small) {
