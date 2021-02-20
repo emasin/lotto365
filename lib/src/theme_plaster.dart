@@ -2,7 +2,7 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-import 'package:lotto365/src/const.dart';
+import 'package:bingolotto45/src/const.dart';
 
 import 'core/puzzle_proxy.dart';
 import 'flutter.dart';

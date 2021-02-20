@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lotto365/home/HomePage.dart';
+import 'package:bingolotto45/home/HomePage.dart';
 
 void main() {
 

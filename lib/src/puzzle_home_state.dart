@@ -5,7 +5,7 @@
 import 'dart:async';
 
 import 'package:provider/provider.dart';
-import 'package:lotto365/src/const.dart';
+import 'package:bingolotto45/src/const.dart';
 
 import 'app_state.dart';
 import 'core/puzzle_animator.dart';
@@ -75,11 +75,20 @@ class PuzzleHomeState extends State
   Ticker _ticker;
   Duration _lastElapsed;
   StreamSubscription _puzzleEventSubscription;
+  int _type = 0;
 
   bool _autoPlay = false;
   _PuzzleControls _autoPlayListenable;
 
-  PuzzleHomeState(this.puzzle) {
+  PuzzleHomeState(this.puzzle,this._type) {
+
+    if(_type == 1) {
+      themes = themes1;
+    } else if(_type == 2) {
+      themes = themes2;
+    } else {
+      themes = themes3;
+    }
     _puzzleEventSubscription = puzzle.onEvent.listen(_onPuzzleEvent);
   }
 
@@ -225,7 +234,7 @@ Widget _doBuild(BuildContext _, BoxConstraints constraints) =>
     _updateConstraints(constraints, _doBuildCore);
 
 Widget _doBuildCore(bool small) => ValueTabController<SharedTheme>(
-      values: themes,
+      values:  themes,
       child: Consumer<SharedTheme>(
         builder: (_, theme, __) => AnimatedContainer(
           duration: puzzleAnimationDuration,
@@ -259,6 +268,7 @@ Widget _doBuildCore(bool small) => ValueTabController<SharedTheme>(
                           unselectedLabelColor: Colors.black.withOpacity(0.6),
                           tabs: themes
                               .map((st) => Text(
+
                                     st.name.toUpperCase(),
                                     style: const TextStyle(
                                       letterSpacing: 0.5,

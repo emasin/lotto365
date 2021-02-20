@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lotto365/Theme.dart' as Theme;
+import 'package:bingolotto45/Theme.dart' as Theme;
 import 'package:shimmer/shimmer.dart';
 
 class GradientAppBar extends StatelessWidget {
@@ -21,8 +21,8 @@ class GradientAppBar extends StatelessWidget {
       height: statusbarHeight + barHeight,
       child: new Center(
         child: Shimmer.fromColors(
-          baseColor: Color(0xFF54C5E6),
-          highlightColor: const Color(0xFFFF8C00),
+          baseColor: Color(0xFFF147DB),
+          highlightColor: const Color(0xFF86E732),
           child: Text(
             title,
             textAlign: TextAlign.center,

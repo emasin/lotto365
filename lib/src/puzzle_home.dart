@@ -8,11 +8,11 @@ import 'puzzle_home_state.dart';
 
 
 class PuzzleHome extends StatefulWidget {
-  final int _rows, _columns;
+  final int _rows, _columns ,_type;
 
-  const PuzzleHome(this._rows, this._columns);
+  const PuzzleHome(this._rows, this._columns,this._type);
 
   @override
   PuzzleHomeState createState() =>
-      PuzzleHomeState(PuzzleAnimator(_columns, _rows));
+      PuzzleHomeState(PuzzleAnimator(_columns, _rows),_type);
 }

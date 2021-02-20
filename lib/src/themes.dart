@@ -6,9 +6,31 @@ import 'theme_plaster.dart';
 import 'theme_seattle.dart';
 import 'theme_simple.dart';
 
-const themes = [
+var themes = [
+
+
+];
+
+const themes1 = [
   ThemeSimple(),
   ThemePlaster(),
   ThemeSeattle(),
+
+];
+
+
+const themes2 = [
+  ThemePlaster(),
+  ThemeSimple(),
+  ThemeSeattle(),
+
+];
+
+
+const themes3 = [
+  ThemeSeattle(),
+  ThemeSimple(),
+  ThemePlaster(),
+
 
 ];
