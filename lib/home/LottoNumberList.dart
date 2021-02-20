@@ -29,7 +29,7 @@ class _LottoNumberListState extends State<LottoNumberList> {
               );
             } else {
               if(snapshot.data.length == 0)
-                return Row(children: <Widget>[Text("데이터가 없습니다. ")],mainAxisAlignment: MainAxisAlignment.center,);
+                return Row(children: <Widget>[Text("내가 태어날 확률은 1/800,000,000,000. 로또 확률은? 풋 ")],mainAxisAlignment: MainAxisAlignment.center,);
 
               print("has data ??? dashboard");
               switch (snapshot.connectionState) {

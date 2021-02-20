@@ -1,5 +1,6 @@
 import 'package:bingolotto45/db_helper.dart';
 import 'package:bingolotto45/home/LottoNumberList.dart';
+import 'package:bingolotto45/home/WinBar.dart';
 import 'package:flutter/material.dart';
 import 'package:bingolotto45/FadePageRoute.dart';
 import 'package:bingolotto45/home/GradientAppBar.dart';
@@ -109,6 +110,7 @@ class _HomePageBodyState extends State<HomePageBody> {
       children: <Widget>[
         new GradientAppBar("BINGO LOTTO 45"),
         //new Container(child: Text("당신의 행운 번호는?"),)
+        new WinBar(),
         new LottoNumberList()
 
       ],

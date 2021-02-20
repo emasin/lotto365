@@ -3,6 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'package:bingolotto45/db_helper.dart';
+import 'package:bingolotto45/home/LottoNumberList.dart';
 import 'package:bingolotto45/model/LottoNumber.dart';
 
 import 'core/puzzle_proxy.dart';
@@ -77,7 +78,7 @@ abstract class SharedTheme {
       );
 
   TextStyle get _infoStyle => TextStyle(
-      color: puzzleAccentColor, fontWeight: FontWeight.bold, fontSize: 18);
+      color: puzzleAccentColor, fontWeight: FontWeight.bold, fontSize: 14);
 
   List<Widget> bottomControls(PuzzleControls controls) => <Widget>[
         IconButton(
@@ -130,7 +131,7 @@ abstract class SharedTheme {
             disabledColor: Colors.grey,
             disabledTextColor: Colors.black,
             shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
             onPressed: () {
               List<int> nlist = List<int>();
               nlist.add(controls.num1);
@@ -154,6 +155,10 @@ abstract class SharedTheme {
               );
 
               DBHelper().addNumber(bb);
+              LottoNumberList.scaffoldKey.currentState.setState(() {
+                Navigator.of(LottoNumberList.scaffoldKey.currentContext).pop();
+              });
+
             },
             child: Text(
               controls.btnText.toString(),
