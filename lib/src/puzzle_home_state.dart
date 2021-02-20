@@ -4,6 +4,7 @@
 
 import 'dart:async';
 
+import 'package:bingolotto45/home/LottoNumberList.dart';
 import 'package:provider/provider.dart';
 import 'package:bingolotto45/src/const.dart';
 
@@ -57,10 +58,18 @@ class _PuzzleControls extends ChangeNotifier implements PuzzleControls {
   int get num6 => _parent.puzzle.num6;
 
   @override
+  int get type => _parent.puzzle.type;
+
+
+  @override
   int get incorrectTiles => _parent.puzzle.incorrectTiles;
 
   @override
+  String get btnText => _parent.puzzle.btnText;
+
+  @override
   void reset() => _parent.puzzle.reset();
+
 }
 
 class PuzzleHomeState extends State
@@ -135,9 +144,12 @@ class PuzzleHomeState extends State
               ),
               const LayoutBuilder(builder: _doBuild),
               SafeArea(child: BackButton(color: Colors.black,onPressed: ()  async {
+                LottoNumberList.scaffoldKey.currentState.setState(() {
 
+                });
 
                 Navigator.of(context).pop();
+
               },))
             ],
           ),

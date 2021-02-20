@@ -15,7 +15,9 @@ abstract class PuzzleControls implements Listenable {
   int get num4;
   int get num5;
   int get num6;
+  int get type;
 
+  String get btnText;
 
   int get incorrectTiles;
 

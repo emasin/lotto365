@@ -5,6 +5,8 @@
 import 'dart:async';
 import 'dart:math' show Point, Random;
 
+import 'package:bingolotto45/model/comments.dart';
+
 import 'body.dart';
 import 'puzzle.dart';
 import 'puzzle_proxy.dart';
@@ -23,7 +25,8 @@ class PuzzleAnimator implements PuzzleProxy {
   int _num4=0;
   int _num5=0;
   int _num6=0;
-
+  String _btnText="?";
+  int _type = 0;
   bool _stable;
 
   bool get stable => _stable;
@@ -53,6 +56,10 @@ class PuzzleAnimator implements PuzzleProxy {
   int get num4 => _num4;
   int get num5 => _num5;
   int get num6 => _num6;
+
+  int get type => _type;
+
+  String   get btnText => _btnText;
 
   void reset() => _resetCore();
 
@@ -162,6 +169,8 @@ class PuzzleAnimator implements PuzzleProxy {
         _num6 = _puzzle[0];
 
       if (_clickCount > 5) {
+        Random rdm = new Random();
+        _btnText = comments[rdm.nextInt(comments.length)];
         _controller.add(PuzzleEvent.noop);
         _clickCount = 0;
         timer.cancel();

@@ -16,6 +16,9 @@ class ThemePlaster extends SharedTheme {
   @override
   String get name => '핫 오렌지볼';
 
+  @override
+  int get type => 1;
+
   const ThemePlaster();
 
   @override

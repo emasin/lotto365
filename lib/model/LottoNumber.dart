@@ -7,11 +7,12 @@ class LottoNumber {
   final int num5;
   final int num6;
   final int type;
+  final String count;
   final String description;
 
 
   const LottoNumber({this.dt, this.num1, this.num2, this.num3, this.num4,
-    this.num5, this.num6,this.type,this.description});
+    this.num5, this.num6,this.type,this.description,this.count});
 
 
 }

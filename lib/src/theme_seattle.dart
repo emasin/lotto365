@@ -11,6 +11,9 @@ class ThemeSeattle extends SharedTheme {
   @override
   String get name => '명품볼';
 
+  @override
+  int get type => 2;
+
   const ThemeSeattle();
 
   @override
@@ -20,7 +23,7 @@ class ThemeSeattle extends SharedTheme {
   Color get puzzleBackgroundColor => Colors.white70;
 
   @override
-  Color get puzzleAccentColor => const Color(0xff000579f);
+  Color get puzzleAccentColor => const Color(0xff000000);
 
   @override
   RoundedRectangleBorder puzzleBorder(bool small) =>

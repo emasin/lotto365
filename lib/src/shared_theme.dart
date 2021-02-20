@@ -2,6 +2,9 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+import 'package:bingolotto45/db_helper.dart';
+import 'package:bingolotto45/model/LottoNumber.dart';
+
 import 'core/puzzle_proxy.dart';
 import 'flutter.dart';
 import 'puzzle_controls.dart';
@@ -13,6 +16,8 @@ abstract class SharedTheme {
   const SharedTheme();
 
   String get name;
+
+  int get type;
 
   Color get puzzleThemeBackground;
 
@@ -72,16 +77,13 @@ abstract class SharedTheme {
       );
 
   TextStyle get _infoStyle => TextStyle(
-        color: puzzleAccentColor,
-        fontWeight: FontWeight.bold,
-      );
+      color: puzzleAccentColor, fontWeight: FontWeight.bold, fontSize: 18);
 
   List<Widget> bottomControls(PuzzleControls controls) => <Widget>[
         IconButton(
           onPressed: controls.reset,
           icon: Icon(Icons.refresh, color: puzzleAccentColor),
         ),
-
         Expanded(
           child: Container(),
         ),
@@ -90,38 +92,72 @@ abstract class SharedTheme {
           textAlign: TextAlign.right,
           style: _infoStyle,
         ),
-    const Text(','),
+        const Text(','),
         Text(
           controls.num2.toString(),
           textAlign: TextAlign.right,
           style: _infoStyle,
         ),
-    const Text(','),
+        const Text(','),
         Text(
           controls.num3.toString(),
           textAlign: TextAlign.right,
           style: _infoStyle,
         ),
-    const Text(','),
+        const Text(','),
         Text(
           controls.num4.toString(),
           textAlign: TextAlign.right,
           style: _infoStyle,
         ),
-    const Text(','),
+        const Text(','),
         Text(
           controls.num5.toString(),
           textAlign: TextAlign.right,
           style: _infoStyle,
         ),
-    const Text(','),
+        const Text(','),
         Text(
           controls.num6.toString(),
           textAlign: TextAlign.right,
           style: _infoStyle,
         ),
-    FlatButton(onPressed: (){}, child: Text("결정"))
+        const Text(' '),
+        FlatButton(
+            splashColor: puzzleAccentColor,
+            color: puzzleAccentColor,
+            textColor: Colors.white,
+            disabledColor: Colors.grey,
+            disabledTextColor: Colors.black,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+            onPressed: () {
+              List<int> nlist = List<int>();
+              nlist.add(controls.num1);
+              nlist.add(controls.num2);
+              nlist.add(controls.num3);
+              nlist.add(controls.num4);
+              nlist.add(controls.num5);
+              nlist.add(controls.num6);
 
+              nlist.sort();
+              print(nlist);
+              print(type);
+              LottoNumber bb = new LottoNumber(
+                num1: nlist[0],
+                num2: nlist[1],
+                num3: nlist[2],
+                num4: nlist[3],
+                num5: nlist[4],
+                num6: nlist[5],
+                type : type
+              );
+
+              DBHelper().addNumber(bb);
+            },
+            child: Text(
+              controls.btnText.toString(),
+            ))
       ];
 
   Widget tileButtonCore(int i, PuzzleProxy puzzle, bool small) {

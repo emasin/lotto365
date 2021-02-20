@@ -1,4 +1,5 @@
-import 'package:bingolotto45/home/PlanetList.dart';
+import 'package:bingolotto45/db_helper.dart';
+import 'package:bingolotto45/home/LottoNumberList.dart';
 import 'package:flutter/material.dart';
 import 'package:bingolotto45/FadePageRoute.dart';
 import 'package:bingolotto45/home/GradientAppBar.dart';
@@ -8,8 +9,12 @@ import 'package:bingolotto45/src/puzzle_home_state.dart';
 import 'package:bingolotto45/src/core/puzzle_animator.dart';
 import 'package:unicorndial/unicorndial.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => new _HomePageState();
+}
 
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
 
@@ -17,11 +22,27 @@ class HomePage extends StatelessWidget {
 
     childButtons.add(UnicornButton(
         hasLabel: true,
+        labelText: "모두 지워버리고 다시 시작!",
+        currentButton: FloatingActionButton(
+          heroTag: "deleteAll",
+          backgroundColor: Colors.amberAccent,
+          mini: false,
+          child: Icon(Icons.auto_delete),
+          onPressed: () {
+            LottoNumberList.scaffoldKey.currentState.setState(() {
+              DBHelper().clearNumbers();
+            });
+
+          },
+        )));
+
+    childButtons.add(UnicornButton(
+        hasLabel: true,
         labelText: "내 인생 전부를 걸고",
         currentButton: FloatingActionButton(
           heroTag: "train",
           backgroundColor: Colors.orangeAccent,
-          mini: true,
+          mini: false,
           child: Icon(Icons.circle),
           onPressed: () {
             Navigator.push(
@@ -37,7 +58,7 @@ class HomePage extends StatelessWidget {
         currentButton: FloatingActionButton(
             heroTag: "airplane",
             backgroundColor: Colors.blueAccent,
-            mini: true,
+            mini: false,
             child: Icon(Icons.circle),
           onPressed: () {
             Navigator.push(
@@ -52,7 +73,7 @@ class HomePage extends StatelessWidget {
         currentButton: FloatingActionButton(
             heroTag: "directions",
             backgroundColor: Colors.black,
-            mini: true,
+            mini: false,
             child: Icon(Icons.shopping_bag),
           onPressed: () {
             Navigator.push(
@@ -88,7 +109,7 @@ class _HomePageBodyState extends State<HomePageBody> {
       children: <Widget>[
         new GradientAppBar("BINGO LOTTO 45"),
         //new Container(child: Text("당신의 행운 번호는?"),)
-        new PlanetList()
+        new LottoNumberList()
 
       ],
     );

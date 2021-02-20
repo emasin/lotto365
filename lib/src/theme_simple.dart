@@ -14,6 +14,9 @@ class ThemeSimple extends SharedTheme {
   @override
   String get name => '미드나잇 블루볼';
 
+  @override
+  int get type => 0;
+
   const ThemeSimple();
 
   @override
