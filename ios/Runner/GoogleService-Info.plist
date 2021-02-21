@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>843289068113-qut54q589uli7d229tcbh393iq30tqhh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.843289068113-qut54q589uli7d229tcbh393iq30tqhh</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAqwd5kiGZcVm4ZnflFjQ9qm89aKioE900</string>
+	<key>GCM_SENDER_ID</key>
+	<string>843289068113</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>kr.co.devkids.app.lotto365</string>
+	<key>PROJECT_ID</key>
+	<string>fbweb-31a5f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fbweb-31a5f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:843289068113:ios:ec6ecb5759157da7486e70</string>
+	<key>DATABASE_URL</key>
+	<string>https://fbweb-31a5f.firebaseio.com</string>
+	<key>ADMOB_APP_ID</key>
+	<string>ca-app-pub-6989543155020547~4514318678</string>
+</dict>
+</plist>

@@ -1,0 +1,193 @@
+{
+  "project_info": {
+    "project_number": "843289068113",
+    "firebase_url": "https://fbweb-31a5f.firebaseio.com",
+    "project_id": "fbweb-31a5f",
+    "storage_bucket": "fbweb-31a5f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843289068113:android:6175607bd10e0baf486e70",
+        "android_client_info": {
+          "package_name": "kr.co.devkids.app.lotto365"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "843289068113-10j7io3efqmqhernhv22jsfd4gbn0n9k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCagi_6fP6EPmjbO1ZN2otwJ13C9K8crC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "843289068113-10j7io3efqmqhernhv22jsfd4gbn0n9k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "843289068113-3l8a0ijktc52pevg69m55g61jdfp73pk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "kr.co.devkids.top10asmr.life"
+              }
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-6989543155020547~6043022762"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843289068113:android:b11e1bbee5d0ff52486e70",
+        "android_client_info": {
+          "package_name": "kr.co.devkids.apps.flagmaster.flagmaster"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "843289068113-10j7io3efqmqhernhv22jsfd4gbn0n9k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCagi_6fP6EPmjbO1ZN2otwJ13C9K8crC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "843289068113-10j7io3efqmqhernhv22jsfd4gbn0n9k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "843289068113-3l8a0ijktc52pevg69m55g61jdfp73pk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "kr.co.devkids.top10asmr.life"
+              }
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-6989543155020547~2856159638"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843289068113:android:c0223abf1af48fd2486e70",
+        "android_client_info": {
+          "package_name": "kr.co.devkids.cafer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "843289068113-10j7io3efqmqhernhv22jsfd4gbn0n9k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCagi_6fP6EPmjbO1ZN2otwJ13C9K8crC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "843289068113-10j7io3efqmqhernhv22jsfd4gbn0n9k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "843289068113-3l8a0ijktc52pevg69m55g61jdfp73pk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "kr.co.devkids.top10asmr.life"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843289068113:android:8dab1f56f1606b78486e70",
+        "android_client_info": {
+          "package_name": "kr.co.devkids.top10asmr.life"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "843289068113-10j7io3efqmqhernhv22jsfd4gbn0n9k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCagi_6fP6EPmjbO1ZN2otwJ13C9K8crC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "843289068113-10j7io3efqmqhernhv22jsfd4gbn0n9k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "843289068113-3l8a0ijktc52pevg69m55g61jdfp73pk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "kr.co.devkids.top10asmr.life"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843289068113:android:7e9dd24d25906714486e70",
+        "android_client_info": {
+          "package_name": "kr.co.devkids.webappv2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "843289068113-10j7io3efqmqhernhv22jsfd4gbn0n9k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCagi_6fP6EPmjbO1ZN2otwJ13C9K8crC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "843289068113-10j7io3efqmqhernhv22jsfd4gbn0n9k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "843289068113-3l8a0ijktc52pevg69m55g61jdfp73pk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "kr.co.devkids.top10asmr.life"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

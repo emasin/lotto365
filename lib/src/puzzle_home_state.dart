@@ -172,7 +172,7 @@ class PuzzleHomeState extends State
                 });
 
 
-                //Navigator.of(context).pop();
+                Navigator.of(context).pop();
 
               },)),
               Positioned(child: AdmobBanner(
