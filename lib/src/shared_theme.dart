@@ -10,10 +10,12 @@ import 'core/puzzle_proxy.dart';
 import 'flutter.dart';
 import 'puzzle_controls.dart';
 import 'widgets/material_interior_alt.dart';
+import 'puzzle_home_state.dart';
 
 final puzzleAnimationDuration = kThemeAnimationDuration * 3;
 
 abstract class SharedTheme {
+
   const SharedTheme();
 
   String get name;
@@ -155,6 +157,9 @@ abstract class SharedTheme {
               );
 
               DBHelper().addNumber(bb);
+              showInterstitialAd();
+
+
               LottoNumberList.scaffoldKey.currentState.setState(() {
                 Navigator.of(LottoNumberList.scaffoldKey.currentContext).pop();
               });
@@ -165,6 +170,11 @@ abstract class SharedTheme {
             ))
       ];
 
+  void showInterstitialAd() async {
+    if (await PuzzleHomeState.interstitialAd.isLoaded) {
+      PuzzleHomeState.interstitialAd.show();
+    }
+  }
   Widget tileButtonCore(int i, PuzzleProxy puzzle, bool small) {
     if (i == puzzle.tileCount && !puzzle.solved) {
       return const Center();

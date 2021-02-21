@@ -4,6 +4,8 @@
 
 import 'dart:async';
 
+import 'package:admob_flutter/admob_flutter.dart';
+import 'package:bingolotto45/function.dart';
 import 'package:bingolotto45/home/LottoNumberList.dart';
 import 'package:provider/provider.dart';
 import 'package:bingolotto45/src/const.dart';
@@ -101,12 +103,31 @@ class PuzzleHomeState extends State
     _puzzleEventSubscription = puzzle.onEvent.listen(_onPuzzleEvent);
   }
 
+
+  static AdmobInterstitial interstitialAd;
+  AdmobBannerSize bannerSize;
+
+
   @override
   void initState() {
     super.initState();
     _autoPlayListenable = _PuzzleControls(this);
     _ticker ??= createTicker(_onTick);
     _autoPlayListenable.reset();
+
+    if(interstitialAd == null) {
+      interstitialAd = AdmobInterstitial(
+        adUnitId: getInterstitialAdUnitId(),
+        listener: (AdmobAdEvent event, Map<String, dynamic> args) {
+          if (event == AdmobAdEvent.closed) interstitialAd.load();
+          handleEvent(event, args, 'Interstitial');
+        },
+      );
+
+      interstitialAd.load();
+    }
+    bannerSize = AdmobBannerSize.FULL_BANNER;
+
    // _ensureTicking();
   }
 
@@ -144,13 +165,31 @@ class PuzzleHomeState extends State
               ),
               const LayoutBuilder(builder: _doBuild),
               SafeArea(child: BackButton(color: Colors.black,onPressed: ()  async {
+
+
                 LottoNumberList.scaffoldKey.currentState.setState(() {
 
                 });
 
-                Navigator.of(context).pop();
 
-              },))
+                //Navigator.of(context).pop();
+
+              },)),
+              Positioned(child: AdmobBanner(
+                adUnitId: getBannerAdUnitId(),
+                adSize: AdmobBannerSize.SMART_BANNER(context),
+                listener: (AdmobAdEvent event,
+                    Map<String, dynamic> args) {
+                  handleEvent(event, args, 'Banner');
+                },
+                onBannerCreated:
+                    (AdmobBannerController controller) {
+                  // Dispose is called automatically for you when Flutter removes the banner from the widget tree.
+                  // Normally you don't need to worry about disposing this yourself, it's handled.
+                  // If you need direct access to dispose, this is your guy!
+                  // controller.dispose();
+                },
+              ),bottom: 10.0,),
             ],
           ),
         ),
@@ -162,6 +201,8 @@ class PuzzleHomeState extends State
     _ticker?.dispose();
     _autoPlayListenable?.dispose();
     _puzzleEventSubscription.cancel();
+    interstitialAd.dispose();
+
     super.dispose();
   }
 

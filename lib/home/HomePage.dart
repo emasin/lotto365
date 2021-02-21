@@ -1,4 +1,6 @@
+import 'package:admob_flutter/admob_flutter.dart';
 import 'package:bingolotto45/db_helper.dart';
+import 'package:bingolotto45/function.dart';
 import 'package:bingolotto45/home/LottoNumberList.dart';
 import 'package:bingolotto45/home/WinBar.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +18,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+
   @override
   Widget build(BuildContext context) {
 
