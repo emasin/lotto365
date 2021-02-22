@@ -37,7 +37,7 @@ class ThemePlaster extends SharedTheme {
           width: 8,
         ),
         borderRadius: BorderRadius.all(
-          Radius.circular(small ? 10 : 18),
+          Radius.circular(small ? 24 : 18),
         ),
       );
 
@@ -76,7 +76,7 @@ class ThemePlaster extends SharedTheme {
       color: _orangeIsh ,
       shape: RoundedRectangleBorder(
         side: BorderSide(color:  _orangeIsh, width: 5),
-        borderRadius: BorderRadius.circular(5),
+        borderRadius: BorderRadius.circular(18),
       ),
     );
   }

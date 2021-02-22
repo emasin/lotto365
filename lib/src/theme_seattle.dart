@@ -29,7 +29,7 @@ class ThemeSeattle extends SharedTheme {
   RoundedRectangleBorder puzzleBorder(bool small) =>
       const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
-          Radius.circular(1),
+          Radius.circular(18),
         ),
       );
 
@@ -64,13 +64,13 @@ class ThemeSeattle extends SharedTheme {
                 (i + 1).toString(),
                 style: TextStyle(
                   fontWeight: FontWeight.normal,
-                  color: correctPosition ? Colors.white : Colors.black,
-                  fontSize: small ? 25 : 42,
+                  color: correctPosition ? Colors.black : Colors.black,
+                  fontSize: small ? 20 : 40,
                 ),
               ),
             ),
       image: decorationImage,
-      padding: EdgeInsets.all(small ? 20 : 32),
+
     );
 
     return createButton(puzzle, small, i, content);
