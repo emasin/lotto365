@@ -1,6 +1,8 @@
 import 'dart:convert';
 
 import 'package:admob_flutter/admob_flutter.dart';
+import 'package:bingolotto45/src/const.dart';
+import 'package:bingolotto45/src/flutter.dart';
 import 'package:debug_mode/debug_mode.dart';
 import 'dart:io' show Platform;
 
@@ -93,4 +95,18 @@ String nvl(val, val2) {
   if (val == null) return val2;
 
   return val;
+}
+
+
+Color getLessColor(no) {
+  if(no < 10)
+    return new Color(less10);
+  else if (no < 20)
+    return new Color(less20);
+  else if (no < 30)
+    return new Color(less30);
+  else if (no < 40)
+    return new Color(less40);
+  else
+    return new Color(less50);
 }
