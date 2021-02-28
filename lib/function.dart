@@ -110,3 +110,21 @@ Color getLessColor(no) {
   else
     return new Color(less50);
 }
+
+bool isWinNo(Map<String, dynamic> json_data,int no){
+  bool isWin = false;
+  if(json_data['no1'] == no )
+    return true;
+  if(json_data['no2'] == no )
+    return true;
+  if(json_data['no3'] == no )
+    return true;
+  if(json_data['no4'] == no )
+    return true;
+  if(json_data['no5'] == no )
+    return true;
+  if(json_data['no6'] == no )
+    return true;
+
+  return isWin;
+}

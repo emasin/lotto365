@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bingolotto45/function.dart';
+import 'package:bingolotto45/home/LottoNumberList.dart';
 import 'package:bingolotto45/src/const.dart';
 import 'package:bingolotto45/src/flutter.dart';
 import 'package:fluro/fluro.dart';
@@ -13,7 +14,8 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 class WinBar extends StatelessWidget {
   Completer<http.Response> _responseCompleter = new Completer();
-
+  Map<String, dynamic> json_data;
+  WinBar(this.json_data);
   @override
   Widget build(BuildContext context) {
 
@@ -31,44 +33,26 @@ class WinBar extends StatelessWidget {
     return new Container(
       margin: EdgeInsets.only(top: 5),
       height: 80, child:
-    new FutureBuilder(
-      future: _responseCompleter.future,
-      builder:
-          (BuildContext context, AsyncSnapshot<http.Response> response) {
-        if (!response.hasData) {
-          return const Center(
-            child: const Text('Loading...'),
-          );
-        } else if (response.data.statusCode != 200) {
-          return const Center(
-            child: const Text('Error loading data'),
-          );
-        } else {
+    new Container(
+      margin: EdgeInsets.only(top: 5),
+      child:
+      new Column(
 
-          print(response.data.body);
-          Map<String,dynamic> json_data = json.decode(response.data.body);
+        children: [
 
-
-          return new Container(
-            margin: EdgeInsets.only(top: 5),
-            child:
-          new Column(
-
+          new Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-
-            new Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
               new Text(json_data['cnt'].toString(), style: new TextStyle( fontSize: 20.0,color: Colors.red)),
               new Text("회차 당첨번호 "),
               new Text(json_data['date'], style: new TextStyle( fontSize: 20.0))
             ],),
-            new SizedBox(height: 5,),
-            new Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
+          new SizedBox(height: 5,),
+          new Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
               new Container(
                 margin: EdgeInsets.only(right: 3),
                 alignment: Alignment.center,
@@ -171,10 +155,7 @@ class WinBar extends StatelessWidget {
               ),
 
             ],)
-          ],),) ;
-        }
-      },
-    ),) ;
+        ],),),) ;
   }
  
 

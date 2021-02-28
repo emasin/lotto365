@@ -12,6 +12,9 @@ import 'package:bingolotto45/src/puzzle_home_state.dart';
 import 'package:bingolotto45/src/core/puzzle_animator.dart';
 import 'package:unicorndial/unicorndial.dart';
 
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'dart:async';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => new _HomePageState();
@@ -107,18 +110,45 @@ class HomePageBody extends StatefulWidget {
 
 class _HomePageBodyState extends State<HomePageBody> {
 
+  Completer<http.Response> _responseCompleter = new Completer();
 
   @override
   Widget build(BuildContext context) {
-    return new Column(
-      children: <Widget>[
-        new GradientAppBar("BINGO LOTTO 45"),
-        //new Container(child: Text("당신의 행운 번호는?"),)
-        new WinBar(),
-        new LottoNumberList()
+    if (!_responseCompleter.isCompleted) {
+      _responseCompleter.complete(
+          http.get('http://www.devkids.co.kr/win.json'));
+    }
 
-      ],
-    );
+    return
+
+      new FutureBuilder(
+          future: _responseCompleter.future,
+          builder: (BuildContext context,
+              AsyncSnapshot<http.Response> response) {
+            if (!response.hasData) {
+              return const Center(
+                child: const Text('Loading...'),
+              );
+            } else if (response.data.statusCode != 200) {
+              return const Center(
+                child: const Text('Error loading data'),
+              );
+            } else {
+              Map<String, dynamic> json_data = json.decode(response.data.body);
+
+
+              return new Column(
+                children: <Widget>[
+                  new GradientAppBar("로또 45"),
+                  //new Container(child: Text("당신의 행운 번호는?"),)
+                  new WinBar(json_data),
+                  new LottoNumberList(json_data)
+
+                ],
+              );
+            }
+          }
+      );
   }
 }
 
