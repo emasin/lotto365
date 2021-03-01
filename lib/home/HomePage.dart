@@ -77,12 +77,12 @@ class _HomePageState extends State<HomePage> {
 
     childButtons.add(UnicornButton(
         hasLabel: true,
-        labelText: "내 인생에 명품 하나쯤은",
+        labelText: "머니 머니 해도 머니",
         currentButton: FloatingActionButton(
             heroTag: "directions",
             backgroundColor: Colors.black,
             mini: false,
-            child: Icon(Icons.shopping_bag),
+            child: Icon(Icons.money),
           onPressed: () {
             Navigator.push(
               context,
