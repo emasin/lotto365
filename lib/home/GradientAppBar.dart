@@ -19,21 +19,23 @@ class GradientAppBar extends StatelessWidget {
     return new Container(
       padding: new EdgeInsets.only(top: statusbarHeight),
       height: statusbarHeight + barHeight,
-      child: new Center(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [ new Icon(Icons.menu ,size: 40,), new Center(
         child: Shimmer.fromColors(
           baseColor: Color(0xFFF147DB),
           highlightColor: const Color(0xFF86E732),
           child: Text(
-            title,
+            '$title        ',
             textAlign: TextAlign.center,
             style: Theme.TextStyles.appBarTitle,
           ),
         ), /**new Text(
-          title,
-          style: Theme.TextStyles.appBarTitle,
-        )**/
+            title,
+            style: Theme.TextStyles.appBarTitle,
+            )**/
 
-      ),
+      ),new SizedBox(),],) ,
       decoration: new BoxDecoration(
         gradient: new LinearGradient(
           colors: [Theme.Colors.appBarGradientStart, Theme.Colors.appBarGradientEnd],
