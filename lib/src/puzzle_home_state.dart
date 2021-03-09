@@ -97,8 +97,10 @@ class PuzzleHomeState extends State
       themes = themes1;
     } else if(_type == 2) {
       themes = themes2;
-    } else {
+    } else if(_type == 3) {
       themes = themes3;
+    } else {
+      themes = themes0;
     }
     _puzzleEventSubscription = puzzle.onEvent.listen(_onPuzzleEvent);
   }

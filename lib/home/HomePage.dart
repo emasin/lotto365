@@ -90,7 +90,20 @@ class _HomePageState extends State<HomePage> {
             );
           },)));
 
-
+    childButtons.add(UnicornButton(
+        hasLabel: true,
+        labelText: "GoldenBall",
+        currentButton: FloatingActionButton(
+          heroTag: "GoldenBall",
+          backgroundColor: Colors.yellow,
+          mini: false,
+          child: Icon(Icons.circle),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => PuzzleHome(9,5,0)),
+            );
+          },)));
     return new Scaffold(
         floatingActionButton :UnicornDialer(
             backgroundColor: Color.fromRGBO(255, 255, 255, 0.6),
