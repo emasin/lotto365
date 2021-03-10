@@ -7,6 +7,7 @@ import 'dart:async';
 import 'package:admob_flutter/admob_flutter.dart';
 import 'package:bingolotto45/function.dart';
 import 'package:bingolotto45/home/LottoNumberList.dart';
+import 'package:bingolotto45/src/custom_dialog_box.dart';
 import 'package:provider/provider.dart';
 import 'package:bingolotto45/src/const.dart';
 
@@ -113,6 +114,7 @@ class PuzzleHomeState extends State
   @override
   void initState() {
     super.initState();
+    CustomDialogBox.size = 1;
     _autoPlayListenable = _PuzzleControls(this);
     _ticker ??= createTicker(_onTick);
     _autoPlayListenable.reset();
@@ -138,9 +140,13 @@ class PuzzleHomeState extends State
       setState(() {
         // Only allow enabling autoPlay if the puzzle is not solved
         _autoPlayListenable._notify();
-        _autoPlay = newValue && !puzzle.solved;
+        print("newValue $newValue");
+        _autoPlay = newValue ;
         if (_autoPlay) {
-          _ensureTicking();
+         //  _ensureTicking();
+          CustomDialogBox.size = 5;
+        } else {
+          CustomDialogBox.size = 1;
         }
       });
     }
@@ -213,7 +219,7 @@ class PuzzleHomeState extends State
 
     _autoPlayListenable._notify();
     if (e != PuzzleEvent.random) {
-      _setAutoPlay(false);
+      //_setAutoPlay(false);
     }
     _tickerTimeSinceLastEvent = Duration.zero;
     _ensureTicking();
@@ -255,7 +261,7 @@ class PuzzleHomeState extends State
 
     if (_autoPlay &&
         _tickerTimeSinceLastEvent > const Duration(milliseconds: 200)) {
-      puzzle.playRandom();
+      //puzzle.playRandom();
 
       if (puzzle.solved) {
         _setAutoPlay(false);

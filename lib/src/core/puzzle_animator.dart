@@ -5,7 +5,10 @@
 import 'dart:async';
 import 'dart:math' show Point, Random;
 
+import 'package:bingolotto45/home/LottoNumberList.dart';
 import 'package:bingolotto45/model/comments.dart';
+import 'package:bingolotto45/src/custom_dialog_box.dart';
+import 'package:bingolotto45/src/flutter.dart';
 
 import 'body.dart';
 import 'puzzle.dart';
@@ -173,6 +176,21 @@ class PuzzleAnimator implements PuzzleProxy {
         _btnText = comments[rdm.nextInt(comments.length)];
         _controller.add(PuzzleEvent.noop);
         _clickCount = 0;
+
+        showDialog(context: LottoNumberList.scaffoldKey.currentContext,
+            builder: (BuildContext context){
+              return CustomDialogBox(
+                title: "이 번호에 느낌이 왔나요?",
+                descriptions: "1,6,10,15,22,36 \n 1,6,10,15,22,36\n 1,6,10,15,22,36\n 1,6,10,15,22,36\n 1,6,10,15,22,36",
+                text1: "아뇨,자신없음.",
+                text2: "네,왔어요!",
+
+              );
+            }
+        );
+
+
+
         timer.cancel();
       }
     }
