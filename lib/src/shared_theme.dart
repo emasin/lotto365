@@ -94,7 +94,7 @@ abstract class SharedTheme {
       activeColor: puzzleAccentColor,
     ),
     Text(
-      '5줄 생성',
+      '5줄 생성(광고노출)',
       textAlign: TextAlign.left,
       style: _infoStyle,
     ),
@@ -106,7 +106,7 @@ abstract class SharedTheme {
 
   void showInterstitialAd() async {
     if (await PuzzleHomeState.interstitialAd.isLoaded) {
-      PuzzleHomeState.interstitialAd.show();
+      PuzzleHomeState.  interstitialAd.show();
     }
   }
   Widget tileButtonCore(int i, PuzzleProxy puzzle, bool small) {

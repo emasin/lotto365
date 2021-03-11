@@ -5,6 +5,7 @@ import 'package:bingolotto45/src/const.dart';
 import 'package:bingolotto45/src/flutter.dart';
 import 'package:debug_mode/debug_mode.dart';
 import 'dart:io' show Platform;
+import 'dart:math';
 
 
 
@@ -127,4 +128,13 @@ bool isWinNo(Map<String, dynamic> json_data,int no){
     return true;
 
   return isWin;
+}
+
+ List recNo(){
+  Set<int> setOfInts = Set();
+  while (setOfInts.length < 7) {
+    setOfInts.add(Random().nextInt(45) + 1);
+  }
+  print(setOfInts.toList());
+  return setOfInts.toList();
 }

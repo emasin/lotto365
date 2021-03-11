@@ -60,8 +60,8 @@ class DBHelper {
 
     final db = await database;
     var res = await db.rawInsert(
-        "INSERT INTO $TableName(dt,num1,num2,num3,num4,num5,num6,type,cnt) VALUES(date( 'now','localtime')||time( 'now','localtime'),?,?,?,?,?,?,?,?)",
-        [bb.num1, bb.num2, bb.num3, bb.num4, bb.num5, bb.num6, bb.type,bb.count]);
+        "INSERT INTO $TableName(dt,num1,num2,num3,num4,num5,num6,type,cnt) VALUES(date( 'now','localtime')||time( 'now','localtime')||?,?,?,?,?,?,?,?,?)",
+        [bb.count,bb.num1, bb.num2, bb.num3, bb.num4, bb.num5, bb.num6, bb.type,bb.count]);
 
     print(res);
 

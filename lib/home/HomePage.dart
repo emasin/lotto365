@@ -152,7 +152,7 @@ class _HomePageBodyState extends State<HomePageBody> {
 
               return new Column(
                 children: <Widget>[
-                  new GradientAppBar("로또 45!  "),
+                  new GradientAppBar("AI 추천 로또45"),
                   //new Container(child: Text("당신의 행운 번호는?"),)
                   new WinBar(json_data),
                   new LottoNumberList(json_data)

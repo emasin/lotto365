@@ -20,8 +20,8 @@ class GradientAppBar extends StatelessWidget {
       padding: new EdgeInsets.only(top: statusbarHeight),
       height: statusbarHeight + barHeight,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [ new Icon(Icons.menu ,size: 40,), new Center(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [  new Center(
         child: Shimmer.fromColors(
           baseColor: Color(0xFFF147DB),
           highlightColor: const Color(0xFF86E732),
