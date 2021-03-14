@@ -21,4 +21,12 @@ https://smok95.github.io/lotto/results/{회차번호}.json
 https://smok95.github.io/lotto/results/latest.json
 전체회차 조회
 https://smok95.github.io/lotto/results/all.json
- 
+
+
+ios % flutter clean \                                                                       
+&& rm ios/Podfile.lock pubspec.lock \
+&& rm -rf ios/Pods ios/Runner.xcworkspace \
+&& flutter build iOS
+
+
+flutter pub cache repair   
