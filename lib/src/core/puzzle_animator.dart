@@ -183,9 +183,9 @@ class PuzzleAnimator implements PuzzleProxy {
         List list = new List();
 
         for(int i=0; i < CustomDialogBox.size;i++) {
-          List nlist = recNo();
+          List nlist = kkk();
 
-          nlist.sort();
+        //  nlist.sort();
 
 
           LottoNumber bb = new LottoNumber(
