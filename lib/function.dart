@@ -138,3 +138,59 @@ bool isWinNo(Map<String, dynamic> json_data,int no){
   print(setOfInts.toList());
   return setOfInts.toList();
 }
+
+
+
+
+List recNo1(){
+  Set<int> setOfInts = Set();
+  while (setOfInts.length < 20) {
+    setOfInts.add(Random().nextInt(45) + 1);
+  }
+  return setOfInts.toList();
+}
+
+List kkk(){
+  var base = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45];
+  var excep = [9,28,22,41,34];
+  var top1 = [12,13,14,17,18,27,34,39,40,43];
+  Random rdm = new Random();
+  var _btnText = top1[rdm.nextInt(top1.length)];
+  List l = recNo1();
+  print(l);
+  for(int i=0;i  < l.length;i++) {
+    //base.(l[i],0);
+    base[l[i]-1] = 0;
+  }
+  print(excep);
+  for(int i=0;i<excep.length;i++) {
+    base[excep[i]-1] = 0;
+  }
+  base.sort();
+  Set s= base.toSet();
+  s.remove(0);
+  print(s);
+
+  print(top1);
+  for(int i = 0; i < top1.length ; i++) {
+    s.add(top1[i]);
+  }
+
+  print(s);
+
+
+  Set<int> finalSet = Set();
+
+  List list = s.toList();
+  print(list);
+  while (finalSet.length < 7) {
+    //finalSet.add(Random().nextInt(s.toString().length) + 1);
+    print(list[Random().nextInt(list.length)]);
+    //finalList.add(list[Random().nextInt(s.toString().length)]);
+    finalSet.add(list[Random().nextInt(list.length)]);
+  }
+  List finalList = finalSet.toList();
+  finalList.sort();
+  print(finalList);
+  return finalList;
+}
