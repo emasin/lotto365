@@ -9,6 +9,7 @@ import 'package:bingolotto45/src/constants.dart';
 import 'package:bingolotto45/src/puzzle_home_state.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class CustomDialogBox extends StatefulWidget {
   static int size = 1;
@@ -44,9 +45,13 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
   }
 
   contentBox(context){
+
+    var f = NumberFormat("00");
+
+
     String desc = "";
     LottoNumber  ln1 = widget.list[0];
-    desc = "${ln1.num1},${ln1.num2},${ln1.num3},${ln1.num4},${ln1.num5},${ln1.num6}\n";
+    desc = "${f.format(ln1.num1)},${ln1.num2},${ln1.num3},${ln1.num4},${ln1.num5},${ln1.num6}\n";
     if( CustomDialogBox.size == 5) {
       LottoNumber ln2 = widget.list[1];
       LottoNumber ln3 = widget.list[2];
@@ -54,10 +59,10 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
       LottoNumber ln5 = widget.list[4];
 
 
-      desc = desc + "${ln2.num1},${ln2.num2},${ln2.num3},${ln2.num4},${ln2.num5},${ln2.num6}\n"
-          + "${ln3.num1},${ln3.num2},${ln3.num3},${ln3.num4},${ln3.num5},${ln3.num6}\n"
-          + "${ln4.num1},${ln4.num2},${ln4.num3},${ln4.num4},${ln4.num5},${ln4.num6}\n"
-          + "${ln5.num1},${ln5.num2},${ln5.num3},${ln5.num4},${ln5.num5},${ln5.num6}\n";
+      desc = desc + "${f.format(ln2.num1)},${ln2.num2},${ln2.num3},${ln2.num4},${ln2.num5},${ln2.num6}\n"
+          + "${f.format(ln3.num1)},${ln3.num2},${ln3.num3},${ln3.num4},${ln3.num5},${ln3.num6}\n"
+          + "${f.format(ln4.num1)},${ln4.num2},${ln4.num3},${ln4.num4},${ln4.num5},${ln4.num6}\n"
+          + "${f.format(ln5.num1)},${ln5.num2},${ln5.num3},${ln5.num4},${ln5.num5},${ln5.num6}\n";
 
     }
 

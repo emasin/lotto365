@@ -146,8 +146,10 @@ bool isWinNo(Map<String, dynamic> json_data,int no){
 
 List recNo1(){
   Set<int> setOfInts = Set();
-  while (setOfInts.length < 20) {
-    setOfInts.add(Random().nextInt(45) + 1);
+  for(int i=0; i < 20 ; i++) {
+    //while (setOfInts.length < 6) {
+      setOfInts.add(Random().nextInt(45) + 1);
+    //}
   }
   return setOfInts.toList();
 }
@@ -159,32 +161,45 @@ List kkk(){
   Random rdm = new Random();
   var _btnText = top1[rdm.nextInt(top1.length)];
   List l = recNo1();
-  print(l);
+  print("1st $l");
+
   for(int i=0;i  < l.length;i++) {
     //base.(l[i],0);
     base[l[i]-1] = 0;
   }
-  print(excep);
+  print("excep $excep");
   for(int i=0;i<excep.length;i++) {
-    base[excep[i]-1] = 0;
+   // base[excep[i]-1] = 0;
+
+
+    int r = Random().nextInt(excep.length);
+    print("excep random $r");
+    print("excep base ${excep[r]}");
+    print("excep base ${base[excep[r]-1]}");
+
+    base[excep[r]-1] =0;
   }
+
+
+
+
   base.sort();
   Set s= base.toSet();
   s.remove(0);
-  print(s);
 
-  print(top1);
+
+
   for(int i = 0; i < top1.length ; i++) {
     s.add(top1[i]);
   }
 
-  print(s);
+
 
 
   Set<int> finalSet = Set();
 
   List list = s.toList();
-  print(list);
+
   while (finalSet.length < 7) {
     //finalSet.add(Random().nextInt(s.toString().length) + 1);
     print(list[Random().nextInt(list.length)]);
