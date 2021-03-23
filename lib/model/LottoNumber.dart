@@ -1,4 +1,6 @@
 class LottoNumber {
+  static Map<String, dynamic> server_data;
+
   final String dt;
   final int num1;
   final int num2;

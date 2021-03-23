@@ -3,6 +3,7 @@ import 'package:bingolotto45/db_helper.dart';
 import 'package:bingolotto45/function.dart';
 import 'package:bingolotto45/home/LottoNumberList.dart';
 import 'package:bingolotto45/home/WinBar.dart';
+import 'package:bingolotto45/model/LottoNumber.dart';
 import 'package:flutter/material.dart';
 import 'package:bingolotto45/FadePageRoute.dart';
 import 'package:bingolotto45/home/GradientAppBar.dart';
@@ -148,7 +149,8 @@ class _HomePageBodyState extends State<HomePageBody> {
               );
             } else {
               Map<String, dynamic> json_data = json.decode(response.data.body);
-
+              LottoNumber.server_data = json_data;
+              print("except numbers ${LottoNumber.server_data['except']}");
 
               return new Column(
                 children: <Widget>[

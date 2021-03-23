@@ -1,11 +1,13 @@
 import 'dart:convert';
 
 import 'package:admob_flutter/admob_flutter.dart';
+import 'package:bingolotto45/model/LottoNumber.dart';
 import 'package:bingolotto45/src/const.dart';
 import 'package:bingolotto45/src/flutter.dart';
 import 'package:debug_mode/debug_mode.dart';
 import 'dart:io' show Platform;
 import 'dart:math';
+
 
 
 
@@ -152,8 +154,8 @@ List recNo1(){
 
 List kkk(){
   var base = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45];
-  var excep = [9,28,22,41,34];
-  var top1 = [12,13,14,17,18,27,34,39,40,43];
+  var excep = LottoNumber.server_data["except"];
+  var top1 = LottoNumber.server_data["top10"];
   Random rdm = new Random();
   var _btnText = top1[rdm.nextInt(top1.length)];
   List l = recNo1();
