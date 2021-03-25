@@ -1,6 +1,7 @@
 import 'package:bingolotto45/db_helper.dart';
 import 'package:bingolotto45/function.dart';
 import 'package:bingolotto45/model/LottoNumber.dart';
+import 'package:bingolotto45/src/const.dart';
 import 'package:flutter/material.dart';
 import 'package:bingolotto45/home/PlanetRow.dart';
 import 'package:bingolotto45/Theme.dart' as Theme;
@@ -84,7 +85,7 @@ class _LottoNumberListState extends State<LottoNumberList> {
                               );
                             },
                             child:Container(
-                            height: 50.0 + ((index+1)%5 ==0? 20.0 : 0.0),
+                            height: (getDeviceType() == DeviceType.Phone ? 50.0 : largeSize) + ((index+1)%5 ==0? 20.0 : 0.0),
                             margin: const EdgeInsets.only(top: 1.0, bottom: 1.0),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -92,8 +93,8 @@ class _LottoNumberListState extends State<LottoNumberList> {
                                 Expanded(child: new Container(
                                   margin: EdgeInsets.only(right: 3),
                                   alignment: Alignment.center,
-                                  width: 50.0,
-                                  height: 50.0,
+                                  width: (getDeviceType() == DeviceType.Phone ? 50.0 : largeSize),
+                                  height: (getDeviceType() == DeviceType.Phone ? 50.0 : largeSize),
                                   padding: const EdgeInsets.all(5.0),//I used some padding without fixed width and height
                                   decoration: new BoxDecoration(
                                     shape: BoxShape.circle,// You can use like this way or like the below line
@@ -110,8 +111,8 @@ class _LottoNumberListState extends State<LottoNumberList> {
                                 Expanded(child: new Container(
                                   margin: EdgeInsets.only(right: 3),
                                   alignment: Alignment.center,
-                                  width: 50.0,
-                                  height: 50.0,
+                                  width: (getDeviceType() == DeviceType.Phone ? 50.0 : largeSize),
+                                  height: (getDeviceType() == DeviceType.Phone ? 50.0 : largeSize),
                                   padding: const EdgeInsets.all(5.0),//I used some padding without fixed width and height
                                   decoration: new BoxDecoration(
                                     shape: BoxShape.circle,// You can use like this way or like the below line
@@ -128,8 +129,8 @@ class _LottoNumberListState extends State<LottoNumberList> {
                                 Expanded(child: new Container(
                                   margin: EdgeInsets.only(right: 3),
                                   alignment: Alignment.center,
-                                  width: 50.0,
-                                  height: 50.0,
+                                  width: (getDeviceType() == DeviceType.Phone ? 50.0 : largeSize),
+                                  height: (getDeviceType() == DeviceType.Phone ? 50.0 : largeSize),
                                   padding: const EdgeInsets.all(5.0),//I used some padding without fixed width and height
                                   decoration: new BoxDecoration(
                                     shape: BoxShape.circle,// You can use like this way or like the below line
@@ -146,8 +147,8 @@ class _LottoNumberListState extends State<LottoNumberList> {
                                 Expanded(child: new Container(
                                   margin: EdgeInsets.only(right: 3),
                                   alignment: Alignment.center,
-                                  width: 50.0,
-                                  height: 50.0,
+                                  width: (getDeviceType() == DeviceType.Phone ? 50.0 : largeSize),
+                                  height: (getDeviceType() == DeviceType.Phone ? 50.0 : largeSize),
                                   padding: const EdgeInsets.all(5.0),//I used some padding without fixed width and height
                                   decoration: new BoxDecoration(
                                     shape: BoxShape.circle,// You can use like this way or like the below line
@@ -164,8 +165,8 @@ class _LottoNumberListState extends State<LottoNumberList> {
                                 Expanded(child: new Container(
                                   margin: EdgeInsets.only(right: 3),
                                   alignment: Alignment.center,
-                                  width: 50.0,
-                                  height: 50.0,
+                                  width: (getDeviceType() == DeviceType.Phone ? 50.0 : largeSize),
+                                  height: (getDeviceType() == DeviceType.Phone ? 50.0 : largeSize),
                                   padding: const EdgeInsets.all(5.0),//I used some padding without fixed width and height
                                   decoration: new BoxDecoration(
                                     shape: BoxShape.circle,// You can use like this way or like the below line
@@ -182,8 +183,8 @@ class _LottoNumberListState extends State<LottoNumberList> {
                                 Expanded(child: new Container(
                                   margin: EdgeInsets.only(right: 3),
                                   alignment: Alignment.center,
-                                  width: 50.0,
-                                  height: 50.0,
+                                  width: (getDeviceType() == DeviceType.Phone ? 50.0 : largeSize),
+                                  height: (getDeviceType() == DeviceType.Phone ? 50.0 : largeSize),
 
                                   padding: const EdgeInsets.all(5.0),//I used some padding without fixed width and height
                                   decoration: new BoxDecoration(

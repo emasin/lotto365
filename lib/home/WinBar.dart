@@ -38,9 +38,9 @@ class WinBar extends StatelessWidget {
 
     return new Container(
       margin: EdgeInsets.only(top: statusbarHeight),
-      height: statusbarHeight + 36.0, child:
+      height: statusbarHeight + (getDeviceType() == DeviceType.Phone ? 36.0 : 56.0), child:
     new Container(
-      margin: EdgeInsets.only(top: 5),
+      margin: EdgeInsets.only(top: 0),
       child:
       new Column(
 

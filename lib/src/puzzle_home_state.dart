@@ -309,7 +309,7 @@ Widget _doBuildCore(bool small) => ValueTabController<SharedTheme>(
                 width: 580,
                 child: Consumer<AppState>(
                   builder: (context, appState, _) => Column(
-                    mainAxisSize: MainAxisSize.min,
+                    mainAxisSize: (getDeviceType() == DeviceType.Phone ?MainAxisSize.min : MainAxisSize.max) ,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       Container(
