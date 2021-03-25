@@ -36,7 +36,7 @@ class TextStyles {
     color: Colors.appBarTitle,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w600,
-    fontSize: 36.0
+    fontSize: 16.0
   );
 
   static const TextStyle planetTitle = const TextStyle(
@@ -59,6 +59,14 @@ class TextStyles {
     fontWeight: FontWeight.w300,
     fontSize: 12.0
   );
+
+  static const TextStyle  planetDistance9= const TextStyle(
+      color: Colors.planetDistance,
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w300,
+      fontSize: 12.0
+  );
+
 
 
 }

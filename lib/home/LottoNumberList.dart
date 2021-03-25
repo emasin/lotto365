@@ -20,12 +20,11 @@ class LottoNumberList extends StatefulWidget {
 class _LottoNumberListState extends State<LottoNumberList> {
   @override
   Widget build(BuildContext context) {
-    print('win no ,${widget.json_data}');
+
 
     return new Flexible(
       child: new Container(
-
-
+        padding: EdgeInsets.only(top:0.0),
         color: Theme.Colors.planetPageBackground,
         child: FutureBuilder<List<LottoNumber>>(
           future: DBHelper().getNumbers(),
@@ -38,7 +37,6 @@ class _LottoNumberListState extends State<LottoNumberList> {
               if(snapshot.data.length == 0)
                 return Row(children: <Widget>[Text("내가 태어날 확률은 1/800,000,000,000. 로또 확률은? 풋 ")],mainAxisAlignment: MainAxisAlignment.center,);
 
-              print("has data ??? dashboard");
               switch (snapshot.connectionState) {
                 case ConnectionState.none:
                 case ConnectionState.waiting:
@@ -86,8 +84,7 @@ class _LottoNumberListState extends State<LottoNumberList> {
                               );
                             },
                             child:Container(
-
-                            height: 70.0,
+                            height: 50.0 + ((index+1)%5 ==0? 20.0 : 0.0),
                             margin: const EdgeInsets.only(top: 1.0, bottom: 1.0),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,

@@ -9,7 +9,7 @@ import 'widgets/decoration_image_plus.dart';
 
 class ThemeSeattle extends SharedTheme {
   @override
-  String get name => '머니볼';
+  String get name => 'Money Ball';
 
   @override
   int get type => 2;
@@ -17,7 +17,7 @@ class ThemeSeattle extends SharedTheme {
   const ThemeSeattle();
 
   @override
-  Color get puzzleThemeBackground => const Color.fromARGB(153, 90, 135, 170);
+  Color get puzzleThemeBackground => const Color.fromARGB(1, 90, 135, 170);
 
   @override
   Color get puzzleBackgroundColor => Colors.white70;
@@ -43,13 +43,10 @@ class ThemeSeattle extends SharedTheme {
       assert(puzzle.solved);
     }
 
-    final decorationImage = DecorationImagePlus(
-        puzzleWidth: puzzle.width,
-        puzzleHeight: puzzle.height,
-        pieceIndex: i,
-        fit: BoxFit.cover,
-        image: const AssetImage('asset/money.jpg'));
-
+    final decorationImage =new DecorationImage(
+      image: new AssetImage('asset/dollar.jpg'),
+      fit: BoxFit.cover,
+    );
     final correctPosition = puzzle.isCorrectPosition(i);
     final content = createInk(
       puzzle.solved
@@ -57,14 +54,14 @@ class ThemeSeattle extends SharedTheme {
           : Container(
               decoration: ShapeDecoration(
                 shape: const CircleBorder(),
-                color: correctPosition ? Colors.black38 : Colors.white54,
+                color: correctPosition ? Colors.black38 : Color.fromARGB(1, 90, 135, 170),
               ),
               alignment: Alignment.center,
               child: Text(
                 (i + 1).toString(),
                 style: TextStyle(
-                  fontWeight: FontWeight.normal,
-                  color: correctPosition ? Colors.black : Colors.black,
+                  fontWeight: FontWeight.bold,
+                  color: correctPosition ? Colors.black : Colors.black54,
                   fontSize: small ? 20 : 40,
                 ),
               ),

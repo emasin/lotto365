@@ -5,7 +5,7 @@ import 'package:shimmer/shimmer.dart';
 class GradientAppBar extends StatelessWidget {
 
   final String title;
-  final double barHeight = 66.0;
+  final double barHeight = 8.0;
 
   GradientAppBar(this.title);
 
@@ -17,8 +17,8 @@ class GradientAppBar extends StatelessWidget {
       .top;
 
     return new Container(
-      padding: new EdgeInsets.only(top: statusbarHeight),
-      height: statusbarHeight + barHeight,
+      padding: new EdgeInsets.only(top: 0),
+      height: barHeight,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [  new Center(
@@ -28,7 +28,7 @@ class GradientAppBar extends StatelessWidget {
           child: Text(
             '$title        ',
             textAlign: TextAlign.center,
-            style: Theme.TextStyles.appBarTitle,
+            style: Theme.TextStyles.planetDistance9,
           ),
         ), /**new Text(
             title,

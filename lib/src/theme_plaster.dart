@@ -14,7 +14,7 @@ const _orangeIsh = Color.fromARGB(255, 224, 107, 83);
 
 class ThemePlaster extends SharedTheme {
   @override
-  String get name => '오렌지볼';
+  String get name => 'Orange Ball';
 
   @override
   int get type => 1;

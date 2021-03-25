@@ -30,9 +30,15 @@ class WinBar extends StatelessWidget {
 //F18D80 20
 //A7A1DE 30
 //6BCE9E 40
+
+    final double statusbarHeight = MediaQuery
+        .of(context)
+        .padding
+        .top;
+
     return new Container(
-      margin: EdgeInsets.only(top: 5),
-      height: 80, child:
+      margin: EdgeInsets.only(top: statusbarHeight),
+      height: statusbarHeight + 36.0, child:
     new Container(
       margin: EdgeInsets.only(top: 5),
       child:

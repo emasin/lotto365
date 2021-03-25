@@ -72,6 +72,8 @@ PODS:
     - nanopb/encode (= 2.30907.0)
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
+  - package_info (0.0.1):
+    - Flutter
   - path_provider (0.0.1):
     - Flutter
   - PromisesObjC (1.2.12)
@@ -83,6 +85,7 @@ DEPENDENCIES:
   - admob_flutter (from `.symlinks/plugins/admob_flutter/ios`)
   - Firebase/Analytics
   - Flutter (from `Flutter`)
+  - package_info (from `.symlinks/plugins/package_info/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - sqflite (from `.symlinks/plugins/sqflite/ios`)
 
@@ -107,6 +110,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/admob_flutter/ios"
   Flutter:
     :path: Flutter
+  package_info:
+    :path: ".symlinks/plugins/package_info/ios"
   path_provider:
     :path: ".symlinks/plugins/path_provider/ios"
   sqflite:
@@ -127,6 +132,7 @@ SPEC CHECKSUMS:
   GoogleUserMessagingPlatform: b168e8c46cd8f92aa3e34b584c4ca78a411ce367
   GoogleUtilities: d866834472f1324d080496bc67ab3ce5d0d46027
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
+  package_info: 873975fc26034f0b863a300ad47e7f1ac6c7ec62
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904

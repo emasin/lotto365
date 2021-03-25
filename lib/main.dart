@@ -15,7 +15,7 @@ void main() {
      // '/detail/1': (context) => PlanetDetailPage(),
 
     },
-    title: "Planets",
+    title: "Lotto45",
     home: new HomePage(),
   ));
 }

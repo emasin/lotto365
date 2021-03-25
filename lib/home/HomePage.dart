@@ -1,9 +1,11 @@
 import 'package:admob_flutter/admob_flutter.dart';
 import 'package:bingolotto45/db_helper.dart';
 import 'package:bingolotto45/function.dart';
+import 'package:bingolotto45/home/CommandBar.dart';
 import 'package:bingolotto45/home/LottoNumberList.dart';
 import 'package:bingolotto45/home/WinBar.dart';
 import 'package:bingolotto45/model/LottoNumber.dart';
+import 'package:bingolotto45/src/custom_info_dialog_box.dart';
 import 'package:flutter/material.dart';
 import 'package:bingolotto45/FadePageRoute.dart';
 import 'package:bingolotto45/home/GradientAppBar.dart';
@@ -16,6 +18,10 @@ import 'package:unicorndial/unicorndial.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:async';
+
+import 'package:package_info/package_info.dart';
+
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => new _HomePageState();
@@ -23,19 +29,38 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
+  PackageInfo _packageInfo = PackageInfo(
+    appName: 'Unknown',
+    packageName: 'Unknown',
+    version: 'Unknown',
+    buildNumber: 'Unknown',
+  );
+
+  @override
+  void initState() {
+    super.initState();
+    _initPackageInfo();
+  }
+
+
+
+  Future<void> _initPackageInfo() async {
+    final PackageInfo info = await PackageInfo.fromPlatform();
+    setState(() {
+      _packageInfo = info;
+    });
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
 
-
     var childButtons = List<UnicornButton>();
-
-
-
 
     childButtons.add(UnicornButton(
         hasLabel: true,
-        labelText: "모두 지워버리고 다시 시작!",
+        labelText: "clean all",
         currentButton: FloatingActionButton(
           heroTag: "deleteAll",
           backgroundColor: Colors.amberAccent,
@@ -48,86 +73,29 @@ class _HomePageState extends State<HomePage> {
 
           },
         )));
-
-
     childButtons.add(UnicornButton(
         hasLabel: true,
-        labelText: "TikTok추천볼",
+        labelText: "version ${_packageInfo.version}",
         currentButton: FloatingActionButton(
-          heroTag: "TikTok",
-          backgroundColor: Colors.cyanAccent,
+          heroTag: "info",
+          backgroundColor: Colors.blueAccent,
           mini: false,
-          child: Icon(Icons.title),
+          child: Icon(Icons.info_outline_rounded),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => PuzzleHome(9,5,4)),
+            showDialog(context: LottoNumberList.scaffoldKey.currentContext,
+                builder: (BuildContext context){
+                  return CustomInfoDialogBox(
+                    title: "앱 정보",
+                    descriptions: "${_packageInfo.version}",
+                    text1: "확인",
+
+
+                  );
+                }
             );
 
           },
         )));
-
-
-    childButtons.add(UnicornButton(
-        hasLabel: true,
-        labelText: "내 인생 전부를 걸고",
-        currentButton: FloatingActionButton(
-          heroTag: "train",
-          backgroundColor: Colors.orangeAccent,
-          mini: false,
-          child: Icon(Icons.circle),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => PuzzleHome(9,5,2)),
-            );
-          },
-        )));
-
-    childButtons.add(UnicornButton(
-        hasLabel: true,
-        labelText: "큰 기대 없이 그냥 ",
-        currentButton: FloatingActionButton(
-            heroTag: "airplane",
-            backgroundColor: Colors.blueAccent,
-            mini: false,
-            child: Icon(Icons.circle),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => PuzzleHome(9,5,1)),
-            );
-          },)));
-
-    childButtons.add(UnicornButton(
-        hasLabel: true,
-        labelText: "머니 머니 해도 머니",
-        currentButton: FloatingActionButton(
-            heroTag: "directions",
-            backgroundColor: Colors.black,
-            mini: false,
-            child: Icon(Icons.money),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => PuzzleHome(9,5,3)),
-            );
-          },)));
-
-    childButtons.add(UnicornButton(
-        hasLabel: true,
-        labelText: "GoldenBall",
-        currentButton: FloatingActionButton(
-          heroTag: "GoldenBall",
-          backgroundColor: Colors.yellow,
-          mini: false,
-          child: Icon(Icons.circle),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => PuzzleHome(9,5,0)),
-            );
-          },)));
     return new Scaffold(
         floatingActionButton :UnicornDialer(
             backgroundColor: Color.fromRGBO(255, 255, 255, 0.6),
@@ -177,9 +145,11 @@ class _HomePageBodyState extends State<HomePageBody> {
 
               return new Column(
                 children: <Widget>[
-                  new GradientAppBar("AI 추천 로또45"),
-                  //new Container(child: Text("당신의 행운 번호는?"),)
+
                   new WinBar(json_data),
+                  new GradientAppBar(""),
+                  new SizedBox(height: 5,),
+                  new CommandBar(),
                   new LottoNumberList(json_data)
 
                 ],

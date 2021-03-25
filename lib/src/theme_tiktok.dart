@@ -9,18 +9,18 @@ import 'widgets/decoration_image_plus.dart';
 
 class ThemeTiktok extends SharedTheme {
   @override
-  String get name => 'TikTok';
+  String get name => 'TikTok Ball';
 
   @override
-  int get type => 2;
+  int get type => 4;
 
   const ThemeTiktok();
 
   @override
-  Color get puzzleThemeBackground => const Color.fromARGB(153, 90, 135, 170);
+  Color get puzzleThemeBackground => const Color.fromARGB(1, 90, 135, 170);
 
   @override
-  Color get puzzleBackgroundColor => Colors.white70;
+  Color get puzzleBackgroundColor => Colors.black12;
 
   @override
   Color get puzzleAccentColor => const Color(0xff000000);
@@ -43,8 +43,23 @@ class ThemeTiktok extends SharedTheme {
       assert(puzzle.solved);
     }
 
-    final decorationImage =new DecorationImage(
-      image: new AssetImage('asset/tiktok.png'),
+    final decorationImage1 =new DecorationImage(
+      image: new AssetImage('asset/ttb1.png'),
+      fit: BoxFit.cover,
+    );
+
+    final decorationImage2 =new DecorationImage(
+      image: new AssetImage('asset/ttb2.png'),
+      fit: BoxFit.cover,
+    );
+
+    final decorationImage3 =new DecorationImage(
+      image: new AssetImage('asset/ttb3.png'),
+      fit: BoxFit.cover,
+    );
+
+    final decorationImage4 =new DecorationImage(
+      image: new AssetImage('asset/ttb4.png'),
       fit: BoxFit.cover,
     );
 
@@ -63,19 +78,19 @@ class ThemeTiktok extends SharedTheme {
           : Container(
               decoration: ShapeDecoration(
                 shape: const CircleBorder(),
-                color: correctPosition ? Colors.black38 : Colors.white54,
+                color: correctPosition ? Colors.black38 : Colors.white10,
               ),
               alignment: Alignment.center,
               child: Text(
                 (i + 1).toString(),
                 style: TextStyle(
-                  fontWeight: FontWeight.normal,
-                  color: correctPosition ? Colors.black : Colors.black,
+                  fontWeight: FontWeight.bold,
+                  color: correctPosition ? Colors.red : i%4==0 ? Colors.white : i%3==0 ?Colors.redAccent : i%2==0 ? Colors.cyanAccent : Colors.white,
                   fontSize: small ? 20 : 40,
                 ),
               ),
             ),
-      image: decorationImage,
+      image: i%4==0? decorationImage4 : (i%3==0 ? decorationImage3 : (i%2==0 ? decorationImage2 : decorationImage1) ),
 
     );
 

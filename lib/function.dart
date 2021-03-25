@@ -157,6 +157,7 @@ List recNo1(){
 List kkk(){
   var base = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45];
   var excep = LottoNumber.server_data["except"];
+  var mustExcep = LottoNumber.server_data["must_except"];
   var top1 = LottoNumber.server_data["top10"];
   Random rdm = new Random();
   var _btnText = top1[rdm.nextInt(top1.length)];
@@ -178,6 +179,10 @@ List kkk(){
     print("excep base ${base[excep[r]-1]}");
 
     base[excep[r]-1] =0;
+  }
+  print("must excep $mustExcep");
+  for(int i=0;i<mustExcep.length;i++) {
+    base[mustExcep[i]-1] = 0;
   }
 
 
