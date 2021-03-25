@@ -27,7 +27,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
 
+
     var childButtons = List<UnicornButton>();
+
+
+
 
     childButtons.add(UnicornButton(
         hasLabel: true,
@@ -44,6 +48,25 @@ class _HomePageState extends State<HomePage> {
 
           },
         )));
+
+
+    childButtons.add(UnicornButton(
+        hasLabel: true,
+        labelText: "TikTok추천볼",
+        currentButton: FloatingActionButton(
+          heroTag: "TikTok",
+          backgroundColor: Colors.cyanAccent,
+          mini: false,
+          child: Icon(Icons.title),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => PuzzleHome(9,5,4)),
+            );
+
+          },
+        )));
+
 
     childButtons.add(UnicornButton(
         hasLabel: true,

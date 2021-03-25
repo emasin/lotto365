@@ -100,6 +100,8 @@ class PuzzleHomeState extends State
       themes = themes2;
     } else if(_type == 3) {
       themes = themes3;
+    } else if(_type == 4) {
+      themes = themes4;
     } else {
       themes = themes0;
     }
@@ -167,7 +169,7 @@ class PuzzleHomeState extends State
                 child: FittedBox(
                   fit: BoxFit.cover,
                   child: Image(
-                    image: AssetImage('asset/goods.jpg'),
+                    image: AssetImage('asset/bg.jpg'),
                   ),
                 ),
               ),

@@ -7,14 +7,14 @@ import 'flutter.dart';
 import 'shared_theme.dart';
 import 'widgets/decoration_image_plus.dart';
 
-class ThemeSeattle extends SharedTheme {
+class ThemeTiktok extends SharedTheme {
   @override
-  String get name => '머니볼';
+  String get name => 'TikTok';
 
   @override
   int get type => 2;
 
-  const ThemeSeattle();
+  const ThemeTiktok();
 
   @override
   Color get puzzleThemeBackground => const Color.fromARGB(153, 90, 135, 170);
@@ -48,7 +48,7 @@ class ThemeSeattle extends SharedTheme {
         puzzleHeight: puzzle.height,
         pieceIndex: i,
         fit: BoxFit.cover,
-        image: const AssetImage('asset/money.jpg'));
+        image: const AssetImage('asset/tiktok.jpg'));
 
     final correctPosition = puzzle.isCorrectPosition(i);
     final content = createInk(

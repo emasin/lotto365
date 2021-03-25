@@ -3,6 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'package:bingolotto45/src/theme_golden.dart';
+import 'package:bingolotto45/src/theme_tiktok.dart';
 
 import 'theme_plaster.dart';
 import 'theme_seattle.dart';
@@ -15,37 +16,32 @@ var themes = [
 
 
 const themes0 = [
-  ThemeGolden(),
-  ThemeSimple(),
-  ThemePlaster(),
-  ThemeSeattle(),
+  ThemeGolden()
 
 
 ];
 
 const themes1 = [
-  ThemeSimple(),
-  ThemePlaster(),
-  ThemeSeattle(),
-  ThemeGolden()
+  ThemeSimple()
 
 ];
 
 
 const themes2 = [
-  ThemePlaster(),
-  ThemeSimple(),
-  ThemeSeattle(),
-  ThemeGolden()
+  ThemePlaster()
 
 ];
 
 
 const themes3 = [
-  ThemeSeattle(),
-  ThemeSimple(),
-  ThemePlaster(),
-  ThemeGolden()
+  ThemeSeattle()
+
+
+];
+
+
+const themes4 = [
+  ThemeTiktok()
 
 
 ];
