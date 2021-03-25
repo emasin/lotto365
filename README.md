@@ -30,3 +30,30 @@ ios % flutter clean \
 
 
 flutter pub cache repair   
+
+
+// Step 1: Retrieve image from picker
+final File image = await ImagePicker.pickImage(source: imageSource);
+
+// Step 2: Check for valid file
+if (image == null) return;
+
+// Step 3: Get directory where we can duplicate selected file.
+final String path = await getApplicationDocumentsDirectory().path;
+
+// Step 4: Copy the file to a application document directory.
+final var fileName = basename(file.path);
+final File localImage = await image.copy('$path/$fileName');
+
+
+// Step 1: Save image/file path as string either db or shared pref
+SharedPreferences prefs = await SharedPreferences.getInstance();
+prefs.setString('test_image', localImage.path)
+
+// Step 2: Loading image by using the path that we saved earlier. We can create a file using path
+//         and can use FileImage provider for loading image from file.
+CircleAvatar(
+backgroundImage: FileImage(File(prefs.getString('test_image')),
+radius: 50,
+backgroundColor: Colors.white)
+

@@ -43,13 +43,19 @@ class ThemeTiktok extends SharedTheme {
       assert(puzzle.solved);
     }
 
-    final decorationImage = DecorationImagePlus(
+    final decorationImage =new DecorationImage(
+      image: new AssetImage('asset/tiktok.png'),
+      fit: BoxFit.cover,
+    );
+
+
+    //Image.asset('asset/tiktok.jpg',width: puzzle.width.toDouble(),height: puzzle.height.toDouble(),);
+    /** DecorationImagePlus(
         puzzleWidth: puzzle.width,
         puzzleHeight: puzzle.height,
-        pieceIndex: i,
         fit: BoxFit.cover,
         image: const AssetImage('asset/tiktok.jpg'));
-
+**/
     final correctPosition = puzzle.isCorrectPosition(i);
     final content = createInk(
       puzzle.solved
