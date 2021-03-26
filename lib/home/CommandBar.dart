@@ -72,7 +72,7 @@ class CommandBar extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => PuzzleHome(9,5,1)),
                 );
               },
-              child: Text("Blue        Ball",style: TextStyle(
+              child: Text("Blue Ball",style: TextStyle(
                 color: Colors.white,)),
             ),
           ),
