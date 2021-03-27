@@ -9,10 +9,11 @@ import 'flutter.dart';
 import 'shared_theme.dart';
 
 const _accentBlue = Color(0xff000579e);
+const _bgBlue = Color(0xff004AAD);
 
 class ThemeSimple extends SharedTheme {
   @override
-  String get name => 'Blue Ball';
+  String get name => 'Super Ball';
 
   @override
   int get type => 0;
@@ -20,13 +21,13 @@ class ThemeSimple extends SharedTheme {
   const ThemeSimple();
 
   @override
-  Color get puzzleThemeBackground => Colors.white;
+  Color get puzzleThemeBackground => Colors.white10;
 
   @override
-  Color get puzzleBackgroundColor => Colors.white70;
+  Color get puzzleBackgroundColor => _bgBlue;
 
   @override
-  Color get puzzleAccentColor => _accentBlue;
+  Color get puzzleAccentColor => Colors.white;
 
   @override
   RoundedRectangleBorder puzzleBorder(bool small) =>
@@ -51,18 +52,30 @@ class ThemeSimple extends SharedTheme {
     }
 
     final correctPosition = puzzle.isCorrectPosition(i);
-
+    final decorationImage =new DecorationImage(
+      image: new AssetImage('asset/super.png'),
+      fit: BoxFit.cover,
+    );
     final content = createInk(
-      Center(
+      puzzle.solved
+          ? const Center()
+          : Container(
+        decoration: ShapeDecoration(
+          shape: const CircleBorder(),
+          color: correctPosition ? Colors.black38 : Color.fromARGB(1, 90, 135, 170),
+        ),
+        alignment: Alignment.center,
         child: Text(
           (i + 1).toString(),
           style: TextStyle(
-            color: Colors.white,
-            fontWeight: correctPosition ? FontWeight.bold : FontWeight.normal,
-            fontSize: small ? smallFontSize : largeFontSize,
+            fontWeight: FontWeight.bold,
+            color: correctPosition ? Colors.black : Colors.white,
+            fontSize: small ? 16 : 40,
           ),
         ),
       ),
+      image: decorationImage,
+
     );
 
     return createButton(
@@ -70,7 +83,7 @@ class ThemeSimple extends SharedTheme {
       small,
       i,
       content,
-      color: const Color.fromARGB(255, 13, 87, 155),
+      color: const Color(0xff061993),
     );
   }
 }

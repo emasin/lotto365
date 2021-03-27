@@ -28,17 +28,36 @@ class CommandBar extends StatelessWidget {
         Expanded(
           flex: 1,
           child: Container(
-
-            color: Colors.amberAccent,
-            height: 80,
-            child:  OutlinedButton(
+            height: 80.0,
+            child: RaisedButton(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => PuzzleHome(9,5,0)),
                 );
               },
-              child: Text("Golden Ball",style: TextStyle(color: Colors.black),),
+
+              padding: EdgeInsets.all(0.0),
+              child: Ink(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: [ Color(0xffD49504),Color(0xffE9B402),],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
+                    borderRadius: BorderRadius.circular(1.0)
+                ),
+                child: Container(
+                  constraints: BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
+                  alignment: Alignment.center,
+                  child: Text(
+                    "Golden Ball",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Colors.black87
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
         ),
@@ -46,16 +65,36 @@ class CommandBar extends StatelessWidget {
         Expanded(
           flex: 1,
           child: Container(
-            color: Colors.black,
-            height: 80,
-            child:  OutlinedButton(
+            height: 80.0,
+            child: RaisedButton(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => PuzzleHome(9,5,3)),
                 );
               },
-              child: Text("Money Ball",style: TextStyle(color: Colors.yellowAccent),),
+
+              padding: EdgeInsets.all(0.0),
+              child: Ink(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: [ Color(0xff110100),Color(0xff1A0200),],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
+                    borderRadius: BorderRadius.circular(1.0)
+                ),
+                child: Container(
+                  constraints: BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
+                  alignment: Alignment.center,
+                  child: Text(
+                    "\$\$\$ Ball",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Colors.green
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
         ),
@@ -63,17 +102,36 @@ class CommandBar extends StatelessWidget {
         Expanded(
           flex: 1,
           child: Container(
-            color: Colors.blueAccent,
-            height: 80,
-            child:  OutlinedButton(
+            height: 80.0,
+            child: RaisedButton(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => PuzzleHome(9,5,1)),
                 );
               },
-              child: Text("Blue Ball",style: TextStyle(
-                color: Colors.white,)),
+
+              padding: EdgeInsets.all(0.0),
+              child: Ink(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: [ Color(0xffED1C24), Color(0xff004AAD),],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
+                    borderRadius: BorderRadius.circular(1.0)
+                ),
+                child: Container(
+                  constraints: BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
+                  alignment: Alignment.center,
+                  child: Text(
+                    "Super Ball",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Colors.white
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
         ),
@@ -81,16 +139,36 @@ class CommandBar extends StatelessWidget {
         Expanded(
           flex: 1,
           child: Container(
-            color: Colors.deepOrangeAccent,
-            height: 80,
-            child: OutlinedButton(
+            height: 80.0,
+            child: RaisedButton(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => PuzzleHome(9,5,2)),
                 );
               },
-              child: Text("Orange Ball",style: TextStyle(color: Colors.black),),
+
+              padding: EdgeInsets.all(0.0),
+              child: Ink(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: [ Color(0xffFFFFFF),Color(0xff00704A),],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
+                    borderRadius: BorderRadius.circular(1.0)
+                ),
+                child: Container(
+                  constraints: BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
+                  alignment: Alignment.center,
+                  child: Text(
+                    "Starbucks Edition",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Colors.black87
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
         ),

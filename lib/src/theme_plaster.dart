@@ -9,12 +9,12 @@ import 'flutter.dart';
 import 'shared_theme.dart';
 
 const _yellowIsh = Color.fromARGB(255, 248, 244, 233);
-const _chocolate = Color.fromARGB(255, 66, 66, 68);
-const _orangeIsh = Color.fromARGB(255, 224, 107, 83);
+const _chocolate = Color.fromARGB(255, 44, 44, 45);
+const _orangeIsh = Color(0xff00704A);
 
 class ThemePlaster extends SharedTheme {
   @override
-  String get name => 'Orange Ball';
+  String get name => 'Starbucks Ball';
 
   @override
   int get type => 1;
