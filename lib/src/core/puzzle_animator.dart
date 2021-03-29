@@ -199,7 +199,7 @@ class PuzzleAnimator implements PuzzleProxy {
               type: _type
           );
 
-          print(bb.num1);
+
           list.add(bb);
 
         }

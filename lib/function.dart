@@ -154,20 +154,25 @@ List recNo1(){
   return setOfInts.toList();
 }
 
+List prevList = new List();
+
 List kkk(){
   var base = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45];
   var excep = LottoNumber.server_data["except"];
   var mustExcep = LottoNumber.server_data["must_except"];
   var top1 = LottoNumber.server_data["top10"];
   Random rdm = new Random();
-  var _btnText = top1[rdm.nextInt(top1.length)];
+ // var _btnText = top1[rdm.nextInt(top1.length)];
   List l = recNo1();
-  print("1st $l");
+  print("prevList $prevList");
 
-  for(int i=0;i  < l.length;i++) {
+  for(int i=0;i  < prevList.length;i++) {
+    int r = Random().nextInt(prevList.length);
     //base.(l[i],0);
-    base[l[i]-1] = 0;
+    print("prevList v ${prevList[r]}");
+    base[prevList[r]-1] = 0;
   }
+
   print("excep $excep");
   for(int i=0;i<excep.length;i++) {
    // base[excep[i]-1] = 0;
@@ -193,27 +198,29 @@ List kkk(){
   s.remove(0);
 
 
-
+/**
   for(int i = 0; i < top1.length ; i++) {
     s.add(top1[i]);
   }
-
+**/
 
 
 
   Set<int> finalSet = Set();
 
   List list = s.toList();
-
-  while (finalSet.length < 7) {
+  print("finalSet $finalSet");
+  while (finalSet.length < 6) {
     //finalSet.add(Random().nextInt(s.toString().length) + 1);
-    print(list[Random().nextInt(list.length)]);
+    var v = list[Random().nextInt(list.length)];
+    print("number $v");
     //finalList.add(list[Random().nextInt(s.toString().length)]);
-    finalSet.add(list[Random().nextInt(list.length)]);
+    finalSet.add(v);
   }
   List finalList = finalSet.toList();
   finalList.sort();
   print(finalList);
+  prevList = finalList;
   return finalList;
 }
 
