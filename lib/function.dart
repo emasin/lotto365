@@ -157,6 +157,9 @@ List recNo1(){
 List prevList = new List();
 
 List kkk(){
+  if(prevList.length > 10)
+     prevList.clear();
+
   var base = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45];
   var excep = LottoNumber.server_data["except"];
   var mustExcep = LottoNumber.server_data["must_except"];
@@ -196,7 +199,7 @@ List kkk(){
   base.sort();
   Set s= base.toSet();
   s.remove(0);
-
+  print("S  ${s.toList()}");
 
 /**
   for(int i = 0; i < top1.length ; i++) {
@@ -220,7 +223,10 @@ List kkk(){
   List finalList = finalSet.toList();
   finalList.sort();
   print(finalList);
-  prevList = finalList;
+  for(int i=0;i<finalList.length;i++){
+    prevList.add(finalList[i]);
+  }
+
   return finalList;
 }
 
