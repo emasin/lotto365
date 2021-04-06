@@ -2,6 +2,8 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+import 'dart:math';
+
 import 'package:bingolotto45/src/const.dart';
 
 import 'core/puzzle_proxy.dart';
@@ -9,7 +11,7 @@ import 'flutter.dart';
 import 'shared_theme.dart';
 
 const _yellowIsh = Color.fromARGB(255, 248, 244, 233);
-const _chocolate = Color.fromARGB(255, 44, 44, 45);
+const _chocolate = Color(0xff00704A);
 const _orangeIsh = Color(0xff00704A);
 
 class ThemePlaster extends SharedTheme {
@@ -33,39 +35,53 @@ class ThemePlaster extends SharedTheme {
   @override
   RoundedRectangleBorder puzzleBorder(bool small) => RoundedRectangleBorder(
         side: const BorderSide(
-          color: Color.fromARGB(255, 103, 103, 105),
-          width: 8,
+          color: Color.fromARGB(255, 5, 5, 5),
+          width: 1,
         ),
         borderRadius: BorderRadius.all(
-          Radius.circular(small ? 24 : 18),
+          Radius.circular(small ? 24 : 24),
         ),
       );
 
+
   @override
   Widget tileButton(int i, PuzzleProxy puzzle, bool small) {
-    final correctColumn = i % puzzle.width;
-    final correctRow = i ~/ puzzle.width;
-
-    final primary = (correctColumn + correctRow).isEven;
-
     if (i == puzzle.tileCount) {
       assert(puzzle.solved);
-      return Center(
+      return const Center(
         child: Icon(
           Icons.thumb_up,
-          size: small ? 50 : 72,
+          size: 72,
           color: _orangeIsh,
         ),
       );
     }
 
-    final content = Text(
-      (i + 1).toString(),
-      style: TextStyle(
-        color:  _yellowIsh ,
-        fontFamily: 'Plaster',
-        fontSize: small ? smallFontSize : largeFontSize,
+    final correctPosition = puzzle.isCorrectPosition(i);
+    final decorationImage =new DecorationImage(
+      image: new AssetImage('asset/sb_icon${Random().nextInt(3)+1}.jpg'),
+      fit: BoxFit.cover,
+    );
+    final content = createInk(
+      puzzle.solved
+          ? const Center()
+          : Container(
+        decoration: ShapeDecoration(
+          shape: const CircleBorder(),
+          color: correctPosition ? Colors.black38 : Color.fromARGB(1, 90, 135, 170),
+        ),
+        alignment: Alignment.center,
+        child: Text(
+          (i + 1).toString(),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: correctPosition ? Colors.black : Colors.black87,
+            fontSize: small ? 16 : 40,
+          ),
+        ),
       ),
+      image: decorationImage,
+
     );
 
     return createButton(
@@ -73,11 +89,7 @@ class ThemePlaster extends SharedTheme {
       small,
       i,
       content,
-      color: _orangeIsh ,
-      shape: RoundedRectangleBorder(
-        side: BorderSide(color:  _orangeIsh, width: 5),
-        borderRadius: BorderRadius.circular(18),
-      ),
+      color: const Color(0xff061993),
     );
   }
 }
