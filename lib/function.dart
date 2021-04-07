@@ -156,8 +156,8 @@ List recNo1(){
 
 List prevList = new List();
 
-List kkk(){
-  if(prevList.length > 10)
+List kkk(int cnt){
+  if(prevList.length > 12 || cnt ==0)
      prevList.clear();
 
   var base = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45];
@@ -165,32 +165,36 @@ List kkk(){
   var mustExcep = LottoNumber.server_data["must_except"];
   var top1 = LottoNumber.server_data["top10"];
   Random rdm = new Random();
- // var _btnText = top1[rdm.nextInt(top1.length)];
-  List l = recNo1();
+
+  List l =  new List();//recNo1();
   print("prevList $prevList");
 
   for(int i=0;i  < prevList.length;i++) {
     int r = Random().nextInt(prevList.length);
-    //base.(l[i],0);
-    print("prevList v ${prevList[r]}");
+    print("prevList v ${base[prevList[r]-1]}" );
+
     base[prevList[r]-1] = 0;
   }
-
+if(cnt>0) {
+ excep = excep + mustExcep;
+}
   print("excep $excep");
+
   for(int i=0;i<excep.length;i++) {
    // base[excep[i]-1] = 0;
 
 
     int r = Random().nextInt(excep.length);
-    print("excep random $r");
-    print("excep base ${excep[r]}");
-    print("excep base ${base[excep[r]-1]}");
+
 
     base[excep[r]-1] =0;
   }
-  print("must excep $mustExcep");
-  for(int i=0;i<mustExcep.length;i++) {
-    base[mustExcep[i]-1] = 0;
+
+  if(cnt == 0) {
+    print("once must excep $mustExcep");
+    for (int i = 0; i < mustExcep.length; i++) {
+      base[mustExcep[i] - 1] = 0;
+    }
   }
 
 
@@ -199,7 +203,7 @@ List kkk(){
   base.sort();
   Set s= base.toSet();
   s.remove(0);
-  print("S  ${s.toList()}");
+
 
 /**
   for(int i = 0; i < top1.length ; i++) {
@@ -212,11 +216,11 @@ List kkk(){
   Set<int> finalSet = Set();
 
   List list = s.toList();
-  print("finalSet $finalSet");
+
   while (finalSet.length < 6) {
     //finalSet.add(Random().nextInt(s.toString().length) + 1);
     var v = list[Random().nextInt(list.length)];
-    print("number $v");
+
     //finalList.add(list[Random().nextInt(s.toString().length)]);
     finalSet.add(v);
   }

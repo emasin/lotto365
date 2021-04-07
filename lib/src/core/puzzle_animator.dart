@@ -153,7 +153,7 @@ class PuzzleAnimator implements PuzzleProxy {
       _puzzle = _puzzle.reset(source: source);
       _controller.add(PuzzleEvent.reset);
       _clickCount++;
-      print(_puzzle[0]);
+      //print(_puzzle[0]);
 
       if(_clickCount == 1)
         _num1 = _puzzle[0];
@@ -183,7 +183,7 @@ class PuzzleAnimator implements PuzzleProxy {
         List list = new List();
 
         for(int i=0; i < CustomDialogBox.size;i++) {
-          List nlist = kkk();
+          List nlist = kkk(i);
 
         //  nlist.sort();
 
