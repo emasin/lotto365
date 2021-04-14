@@ -153,7 +153,7 @@ class PuzzleAnimator implements PuzzleProxy {
       _puzzle = _puzzle.reset(source: source);
       _controller.add(PuzzleEvent.reset);
       _clickCount++;
-      print(_puzzle[0]);
+
 
       if(_clickCount == 1)
         _num1 = _puzzle[0];
