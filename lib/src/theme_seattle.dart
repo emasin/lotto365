@@ -61,8 +61,8 @@ class ThemeSeattle extends SharedTheme {
                 (i + 1).toString(),
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: correctPosition ? Colors.black : Colors.black54,
-                  fontSize: small ? 20 : 40,
+                  color: correctPosition ? Colors.black : Colors.black,
+                  fontSize: small ? 14 : 28,
                 ),
               ),
             ),

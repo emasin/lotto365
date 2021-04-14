@@ -63,7 +63,7 @@ class ThemeGolden extends SharedTheme {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: correctPosition ? Colors.black : Colors.white,
-                  fontSize: small ? 20 : 40,
+                  fontSize: small ? 14 : 28,
                 ),
               ),
             ),
