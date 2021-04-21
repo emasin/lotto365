@@ -65,6 +65,9 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
     }
 
     int m = Random().nextInt(6);
+    if(widget.type ==0)
+      m = 6;
+
     return Stack(
       children: <Widget>[
         Container(
