@@ -2,6 +2,8 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+import 'dart:math';
+
 import 'core/puzzle_proxy.dart';
 import 'flutter.dart';
 import 'shared_theme.dart';
@@ -9,7 +11,7 @@ import 'widgets/decoration_image_plus.dart';
 
 class ThemeGolden extends SharedTheme {
   @override
-  String get name => 'Golden Ball';
+  String get name => 'Dragon Ball';
 
   @override
   int get type => 2;
@@ -42,9 +44,10 @@ class ThemeGolden extends SharedTheme {
     if (i == puzzle.tileCount && !puzzle.solved) {
       assert(puzzle.solved);
     }
-
+    Random rdm = new Random();
+    int star = rdm.nextInt(6)+1;
     final decorationImage =new DecorationImage(
-      image: new AssetImage('asset/bitcoin.jpg'),
+      image: new AssetImage('asset/${star}star.png'),
       fit: BoxFit.cover,
     );
 

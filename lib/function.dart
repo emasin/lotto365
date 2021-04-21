@@ -134,7 +134,7 @@ bool isWinNo(Map<String, dynamic> json_data,int no){
 
  List recNo(){
   Set<int> setOfInts = Set();
-  while (setOfInts.length < 7) {
+  while (setOfInts.length < 6) {
     setOfInts.add(Random().nextInt(45) + 1);
   }
   print(setOfInts.toList());
@@ -162,7 +162,9 @@ List kkk(int cnt){
 
   var base = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45];
   var excep = LottoNumber.server_data["except"];
+
   var mustExcep = LottoNumber.server_data["must_except"];
+  //excep =[1,14,15,24,40,41,4,15,24,35,36,40,10,11,20,21,25,41,4,9,23,26,29,33,1,9,26,28,30,41,7,9,22,27,37,42];
   var top1 = LottoNumber.server_data["top10"];
   Random rdm = new Random();
 
@@ -175,27 +177,30 @@ List kkk(int cnt){
 
     base[prevList[r]-1] = 0;
   }
-if(cnt>0) {
- excep = excep + mustExcep;
-}
+
   print("excep $excep");
 
-  for(int i=0;i<excep.length;i++) {
+  Set excepSet = excep.toSet();
+  List excepList = excepSet.toList();
+  for(int i=0;i<excepList.length;i++) {
    // base[excep[i]-1] = 0;
 
 
-    int r = Random().nextInt(excep.length);
+    int r = Random().nextInt(excepList.length);
 
+    print('exep $r ${base[excepList[r]-1]}');
 
-    base[excep[r]-1] =0;
+    base[excepList[r]-1] =0;
+
   }
 
-  if(cnt == 0) {
-    print("once must excep $mustExcep");
+
+
     for (int i = 0; i < mustExcep.length; i++) {
+      print('mustExcep ${mustExcep[i]} ${base[mustExcep[i] - 1]}');
       base[mustExcep[i] - 1] = 0;
     }
-  }
+
 
 
 
@@ -216,6 +221,8 @@ if(cnt>0) {
   Set<int> finalSet = Set();
 
   List list = s.toList();
+  if(list.length < 6)
+    return [];
 
   while (finalSet.length < 6) {
     //finalSet.add(Random().nextInt(s.toString().length) + 1);

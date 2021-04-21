@@ -174,15 +174,15 @@ class PuzzleHomeState extends State
                 ),
               ),
               const LayoutBuilder(builder: _doBuild),
-              SafeArea(child: BackButton(color: Colors.black,onPressed: ()  async {
+              SafeArea(child: BackButton(color: Colors.black,onPressed: ()  {
 
 
                 LottoNumberList.scaffoldKey.currentState.setState(() {
-
+                  Navigator.of(context).pop();
                 });
 
 
-                Navigator.of(context).pop();
+
 
               },)),
               Positioned(child: AdmobBanner(

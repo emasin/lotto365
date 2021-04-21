@@ -101,17 +101,22 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                       child: Text(widget.text1,style: TextStyle(fontSize: 18),)),
                   FlatButton(
                       onPressed: (){
+
+                        if(CustomDialogBox.size == 5)
+                          showInterstitialAd();
+
                         print("size ${CustomDialogBox.size}");
 
 
                         for(int i = 0; i < widget.list.length;i++) {
                           DBHelper().addNumber(widget.list[i]);
                         }
-                        if(CustomDialogBox.size == 5)
-                          showInterstitialAd();
+
+
 
                         LottoNumberList.scaffoldKey.currentState.setState(() {
-                          Navigator.of(LottoNumberList.scaffoldKey.currentContext).pop();
+                          //Navigator.of(LottoNumberList.scaffoldKey.currentContext).pop();
+
                           Navigator.of(LottoNumberList.scaffoldKey.currentContext).pop();
                         });
                       },

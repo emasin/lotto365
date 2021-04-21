@@ -40,22 +40,23 @@ class CommandBar extends StatelessWidget {
               padding: EdgeInsets.all(0.0),
               child: Ink(
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [ Color(0xffD49504),Color(0xffE9B402),],
+                    gradient: LinearGradient(colors: [ Color(0xffFF9000),Color(0xffFF6600),],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     ),
                     borderRadius: BorderRadius.circular(1.0)
                 ),
                 child: Container(
-                  constraints: BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
-                  alignment: Alignment.center,
-                  child: Text(
-                    "Golden Ball",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.black87
-                    ),
-                  ),
+
+                  child:Column(children: [Image.asset('asset/scouter.jpeg',fit:BoxFit.fitHeight,),
+                    Text(
+                        "Dragon \nBall",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Color(0xffFFFFFF),fontSize: 12
+                        ))
+
+                  ])
                 ),
               ),
             ),
