@@ -94,17 +94,23 @@ class PuzzleHomeState extends State
 
   PuzzleHomeState(this.puzzle,this._type) {
 
+
     if(_type == 1) {
       themes = themes1;
     } else if(_type == 2) {
       themes = themes2;
     } else if(_type == 3) {
       themes = themes3;
-    } else if(_type == 4) {
+    } else if(_type == 4)
+    {
       themes = themes4;
-    } else {
+    }
+    else {
       themes = themes0;
     }
+
+    CustomDialogBox.type = _type;
+
     _puzzleEventSubscription = puzzle.onEvent.listen(_onPuzzleEvent);
   }
 

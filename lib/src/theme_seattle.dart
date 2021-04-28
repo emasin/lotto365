@@ -2,6 +2,8 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+import 'dart:math';
+
 import 'core/puzzle_proxy.dart';
 import 'flutter.dart';
 import 'shared_theme.dart';
@@ -9,7 +11,7 @@ import 'widgets/decoration_image_plus.dart';
 
 class ThemeSeattle extends SharedTheme {
   @override
-  String get name => 'Money Ball';
+  String get name => '사륜안/しゃりんがん';
 
   @override
   int get type => 2;
@@ -42,9 +44,10 @@ class ThemeSeattle extends SharedTheme {
     if (i == puzzle.tileCount && !puzzle.solved) {
       assert(puzzle.solved);
     }
-
+    Random rdm = new Random();
+    int star = rdm.nextInt(9)+1;
     final decorationImage =new DecorationImage(
-      image: new AssetImage('asset/dollar.jpg'),
+      image: new AssetImage('asset/${star}me.png'),
       fit: BoxFit.cover,
     );
     final correctPosition = puzzle.isCorrectPosition(i);
@@ -61,7 +64,7 @@ class ThemeSeattle extends SharedTheme {
                 (i + 1).toString(),
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: correctPosition ? Colors.black : Colors.black,
+                  color: correctPosition ? Colors.black : Colors.white,
                   fontSize: small ? 14 : 28,
                 ),
               ),

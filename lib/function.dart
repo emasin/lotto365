@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:admob_flutter/admob_flutter.dart';
 import 'package:bingolotto45/model/LottoNumber.dart';
 import 'package:bingolotto45/src/const.dart';
+import 'package:bingolotto45/src/custom_dialog_box.dart';
 import 'package:bingolotto45/src/flutter.dart';
 import 'package:debug_mode/debug_mode.dart';
 import 'dart:io' show Platform;
@@ -164,6 +165,7 @@ List kkk(int cnt){
   var excep = LottoNumber.server_data["except"];
 
   var mustExcep = LottoNumber.server_data["must_except"];
+  CustomDialogBox.except_no = mustExcep;
   //excep =[1,14,15,24,40,41,4,15,24,35,36,40,10,11,20,21,25,41,4,9,23,26,29,33,1,9,26,28,30,41,7,9,22,27,37,42];
   var top1 = LottoNumber.server_data["top10"];
   Random rdm = new Random();

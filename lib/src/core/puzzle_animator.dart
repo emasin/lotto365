@@ -79,7 +79,7 @@ class PuzzleAnimator implements PuzzleProxy {
   int _lastBadClick;
   int _badClickCount = 0;
 
-  PuzzleAnimator(int width, int height) : this._(Puzzle(width, height));
+  PuzzleAnimator(int width, int height,int type) : this._(Puzzle(width, height));
 
   PuzzleAnimator._(this._puzzle)
       : _locations = List.generate(_puzzle.length, (i) {
@@ -212,7 +212,6 @@ class PuzzleAnimator implements PuzzleProxy {
                 descriptions: "",
                 text1: "아뇨,자신없음.",
                 text2: "네,왔어요!",
-                type: _type,
                 list: list,
 
               );

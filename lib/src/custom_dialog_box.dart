@@ -13,12 +13,12 @@ import 'package:intl/intl.dart';
 
 class CustomDialogBox extends StatefulWidget {
   static int size = 1;
-  final int type;
+  static int type = 1;
   final String title, descriptions, text1,text2;
   final Image img;
   final List list;
-
-  const CustomDialogBox({Key key, this.title, this.descriptions, this.text1,this.text2, this.img, this.type,this.list}) : super(key: key);
+  static var except_no;
+  const CustomDialogBox({Key key, this.title, this.descriptions, this.text1,this.text2, this.img,this.list}) : super(key: key);
 
   @override
   _CustomDialogBoxState createState() => _CustomDialogBoxState();
@@ -65,8 +65,12 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
     }
 
     int m = Random().nextInt(6);
-    if(widget.type ==0)
+    print('widget.type ${CustomDialogBox.type}');
+    if(CustomDialogBox.type ==0) {
       m = 6;
+    }else if(CustomDialogBox.type ==3) {
+      m = 7;
+    }
 
     return Stack(
       children: <Widget>[
@@ -92,6 +96,8 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
               SizedBox(height: 15,),
               Text(desc,style: TextStyle(fontSize: 20),textAlign: TextAlign.center,),
               SizedBox(height: 22,),
+              CustomDialogBox.type == 3 ? Text('사륜안만 보이는 제외번호',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),) :SizedBox(height: 0,),
+              CustomDialogBox.type == 3 ? Text(CustomDialogBox.except_no.toString(),style: TextStyle(fontSize: 14),textAlign: TextAlign.center,) :SizedBox(height: 0,),
               Align(
                 alignment: Alignment.center,
                 child: Row(
@@ -119,7 +125,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
 
                         LottoNumberList.scaffoldKey.currentState.setState(() {
                           //Navigator.of(LottoNumberList.scaffoldKey.currentContext).pop();
-
+                          Navigator.of(LottoNumberList.scaffoldKey.currentContext).pop();
                           Navigator.of(LottoNumberList.scaffoldKey.currentContext).pop();
                         });
                       },

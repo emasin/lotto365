@@ -14,5 +14,5 @@ class PuzzleHome extends StatefulWidget {
 
   @override
   PuzzleHomeState createState() =>
-      PuzzleHomeState(PuzzleAnimator(_columns, _rows),_type);
+      PuzzleHomeState(PuzzleAnimator(_columns, _rows,_type),_type);
 }

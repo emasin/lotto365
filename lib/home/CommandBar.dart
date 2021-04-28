@@ -53,7 +53,7 @@ class CommandBar extends StatelessWidget {
                         "Dragon \nBall",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            color: Color(0xffFFFFFF),fontSize: 12
+                            color: Color(0xffFFFFFF),fontSize: 10
                         ))
 
                   ])
@@ -87,13 +87,15 @@ class CommandBar extends StatelessWidget {
                 child: Container(
                   constraints: BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
                   alignment: Alignment.center,
-                  child: Text(
-                    "\$\$\$ Ball",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.green
-                    ),
-                  ),
+                    child:Column(children: [Image.asset('asset/4eyes.gif',fit:BoxFit.fitHeight,),
+                      Text(
+                          "寫輪眼\n사륜안",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Color(0xffFFFFFF),fontSize: 10
+                          ))
+
+                    ])
                 ),
               ),
             ),
