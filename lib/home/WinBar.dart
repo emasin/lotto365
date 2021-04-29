@@ -9,8 +9,9 @@ import 'package:flutter/material.dart';
 
 import 'package:bingolotto45/Theme.dart' as Theme;
 import 'package:bingolotto45/model/Planet.dart';
-
 import 'package:http/http.dart' as http;
+
+
 import 'dart:convert';
 class WinBar extends StatelessWidget {
   Completer<http.Response> _responseCompleter = new Completer();
@@ -18,10 +19,10 @@ class WinBar extends StatelessWidget {
   WinBar(this.json_data);
   @override
   Widget build(BuildContext context) {
-
+    var url = Uri.parse('http://www.devkids.co.kr/win.json');
 
     if ( !_responseCompleter.isCompleted) {
-      _responseCompleter.complete(http.get('http://www.devkids.co.kr/win.json'));
+      _responseCompleter.complete(http.get(url));
 
     }
     const _orangeIsh = Color.fromARGB(255, 224, 107, 83);

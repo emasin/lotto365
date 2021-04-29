@@ -16,6 +16,8 @@ import 'package:bingolotto45/src/core/puzzle_animator.dart';
 import 'package:unicorndial/unicorndial.dart';
 
 import 'package:http/http.dart' as http;
+
+
 import 'dart:convert';
 import 'dart:async';
 
@@ -119,9 +121,10 @@ class _HomePageBodyState extends State<HomePageBody> {
 
   @override
   Widget build(BuildContext context) {
+    var url = Uri.parse('http://www.devkids.co.kr/win.json');
     if (!_responseCompleter.isCompleted) {
       _responseCompleter.complete(
-          http.get('http://www.devkids.co.kr/win.json'));
+          http.get(url));
     }
 
     return

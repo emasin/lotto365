@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:bingolotto45/Theme.dart' as Theme;
 import 'package:bingolotto45/model/Planet.dart';
 
-import 'package:http/http.dart' as http;
+
 import 'dart:convert';
 class CommandBar extends StatelessWidget {
   CommandBar();
@@ -89,7 +89,7 @@ class CommandBar extends StatelessWidget {
                   alignment: Alignment.center,
                     child:Column(children: [Image.asset('asset/4eyes.gif',fit:BoxFit.fitHeight,),
                       Text(
-                          "寫輪眼\n사륜안",
+                          "しゃりんがん\n사륜안",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: Color(0xffFFFFFF),fontSize: 10

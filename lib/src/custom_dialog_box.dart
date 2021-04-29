@@ -10,6 +10,9 @@ import 'package:bingolotto45/src/puzzle_home_state.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:store_launcher/store_launcher.dart';
+import 'package:flutter/foundation.dart' show TargetPlatform;
+
 
 class CustomDialogBox extends StatefulWidget {
   static int size = 1;
@@ -93,11 +96,35 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Text(widget.title,style: TextStyle(fontSize: 22,fontWeight: FontWeight.w600),),
-              SizedBox(height: 15,),
+              SizedBox(height: 10,),
               Text(desc,style: TextStyle(fontSize: 20),textAlign: TextAlign.center,),
-              SizedBox(height: 22,),
+              SizedBox(height: 10,),
               CustomDialogBox.type == 3 ? Text('사륜안만 보이는 제외번호',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),) :SizedBox(height: 0,),
               CustomDialogBox.type == 3 ? Text(CustomDialogBox.except_no.toString(),style: TextStyle(fontSize: 14),textAlign: TextAlign.center,) :SizedBox(height: 0,),
+              Center(
+                child: Container(
+                  margin: const EdgeInsets.all(10.0),
+                  color: Colors.yellow,
+                  height: 150,
+                  child: ClipRect(
+                      child:GestureDetector(child: Banner(
+                        message: "hello",
+                        location: BannerLocation.topEnd,
+                        color: Colors.red,
+                        child: Container(
+                          color: Colors.yellow,
+                          height: 150,
+                          width: 217,
+                          child: Center(
+                            child: Image.asset('asset/150banner.png'),
+                          ),
+                        ),
+                      ),onTap: () {
+                        openWithStore();
+                      },)
+                  ),
+                ),
+              ),
               Align(
                 alignment: Alignment.center,
                 child: Row(
@@ -114,15 +141,9 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                         if(CustomDialogBox.size == 5)
                           showInterstitialAd();
 
-                        print("size ${CustomDialogBox.size}");
-
-
                         for(int i = 0; i < widget.list.length;i++) {
                           DBHelper().addNumber(widget.list[i]);
                         }
-
-
-
                         LottoNumberList.scaffoldKey.currentState.setState(() {
                           //Navigator.of(LottoNumberList.scaffoldKey.currentContext).pop();
                           Navigator.of(LottoNumberList.scaffoldKey.currentContext).pop();
@@ -132,6 +153,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                       child: Text(widget.text2,style: TextStyle(fontSize: 18),)),
                 ],) ,
               ),
+
             ],
           ),
         ),
@@ -147,7 +169,20 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
             ),
           ),
         ),
+
       ],
     );
+  }
+
+  Future<void> openWithStore() async {
+    var appId = TargetPlatform.iOS == Theme.of(context).platform ? '1551638920' : 'kr.co.devkids.apps.flagmaster.flagmaster';
+    print('app id: $appId');
+    try {
+      StoreLauncher.openWithStore(appId).catchError((e) {
+        print('ERROR> $e');
+      });
+    } on Exception catch (e) {
+      print('$e');
+    }
   }
 }
