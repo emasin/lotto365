@@ -24,6 +24,11 @@
 	<string>ca-app-pub-6989543155020547~4514318678</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>이 식별자는 개인 맞춤 광고를 제공하는 데 사용됩니다.</string>
 	<key>UILaunchStoryboardName</key>
@@ -45,10 +50,5 @@
 	<false/>
 	<key>io.flutter.embedded_views_preview</key>
 	<true/>
-	<key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
 </dict>
 </plist>

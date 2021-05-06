@@ -73,6 +73,8 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
       m = 6;
     }else if(CustomDialogBox.type ==3) {
       m = 7;
+    }else if(CustomDialogBox.type ==1) {
+      m = 8;
     }
 
     return Stack(
