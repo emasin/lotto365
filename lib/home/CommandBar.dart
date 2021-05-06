@@ -124,15 +124,17 @@ class CommandBar extends StatelessWidget {
                     borderRadius: BorderRadius.circular(1.0)
                 ),
                 child: Container(
-                  constraints: BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
-                  alignment: Alignment.center,
-                  child: Text(
-                    "Super Ball",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.white
-                    ),
-                  ),
+                    constraints: BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
+                    alignment: Alignment.center,
+                    child:Column(children: [Image.asset('asset/inoske11.gif',fit:BoxFit.fitHeight,),
+                      Text(
+                          "귀멸의칼날",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Color(0xffFFFFFF),fontSize: 10
+                          ))
+
+                    ])
                 ),
               ),
             ),
