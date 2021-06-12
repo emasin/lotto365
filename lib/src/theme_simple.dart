@@ -2,6 +2,8 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+import 'dart:math';
+
 import 'package:bingolotto45/src/const.dart';
 
 import 'core/puzzle_proxy.dart';
@@ -13,7 +15,7 @@ const _bgBlue = Color(0xff004AAD);
 
 class ThemeSimple extends SharedTheme {
   @override
-  String get name => 'Super Ball';
+  String get name => '鬼滅の刃';
 
   @override
   int get type => 0;
@@ -21,18 +23,18 @@ class ThemeSimple extends SharedTheme {
   const ThemeSimple();
 
   @override
-  Color get puzzleThemeBackground => Colors.white10;
+  Color get puzzleThemeBackground => const Color.fromARGB(1, 90, 135, 170);
 
   @override
-  Color get puzzleBackgroundColor => _bgBlue;
+  Color get puzzleBackgroundColor => Colors.white70;
 
   @override
-  Color get puzzleAccentColor => Colors.black87;
+  Color get puzzleAccentColor => const Color(0xff000000);
 
   @override
   RoundedRectangleBorder puzzleBorder(bool small) =>
       const RoundedRectangleBorder(
-        side: BorderSide(color: Colors.black87, width: 4),
+        side: BorderSide(color: Colors.black87, width: 1),
         borderRadius: BorderRadius.all(
           Radius.circular(18),
         ),
@@ -50,10 +52,11 @@ class ThemeSimple extends SharedTheme {
         ),
       );
     }
-
+    Random rdm = new Random();
+    int star = rdm.nextInt(9);
     final correctPosition = puzzle.isCorrectPosition(i);
     final decorationImage =new DecorationImage(
-      image: new AssetImage('asset/super.png'),
+      image: new AssetImage('asset/n$star.png'),
       fit: BoxFit.cover,
     );
     final content = createInk(
@@ -69,8 +72,8 @@ class ThemeSimple extends SharedTheme {
           (i + 1).toString(),
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            color: correctPosition ? Colors.black : Colors.white,
-            fontSize: small ? 16 : 40,
+            color: correctPosition ? Colors.black : Colors.black87,
+            fontSize: small ? 12 : 24,
           ),
         ),
       ),
