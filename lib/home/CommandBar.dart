@@ -28,7 +28,7 @@ class CommandBar extends StatelessWidget {
         Expanded(
           flex: 1,
           child: Container(
-            height: 80.0,
+            height: 140.0,
             child: RaisedButton(
               onPressed: () {
                 Navigator.push(
@@ -66,7 +66,7 @@ class CommandBar extends StatelessWidget {
         Expanded(
           flex: 1,
           child: Container(
-            height: 80.0,
+            height: 140.0,
             child: RaisedButton(
               onPressed: () {
                 Navigator.push(
@@ -105,7 +105,7 @@ class CommandBar extends StatelessWidget {
         Expanded(
           flex: 1,
           child: Container(
-            height: 80.0,
+            height: 140.0,
             child: RaisedButton(
               onPressed: () {
                 Navigator.push(
@@ -144,7 +144,7 @@ class CommandBar extends StatelessWidget {
         Expanded(
           flex: 1,
           child: Container(
-            height: 80.0,
+            height: 140.0,
             child: RaisedButton(
               onPressed: () {
                 Navigator.push(
@@ -181,7 +181,7 @@ class CommandBar extends StatelessWidget {
         Expanded(
           flex: 1,
           child: Container(
-            height: 80.0,
+            height: 140.0,
             child: RaisedButton(
               onPressed: () {
                 Navigator.push(
@@ -215,7 +215,7 @@ class CommandBar extends StatelessWidget {
           ),
         ),
         SizedBox(width: 2,),
-      ],) ,height: 80,padding: EdgeInsets.only(bottom:0.0),)
+      ],) ,height: 140,padding: EdgeInsets.only(bottom:0.0),)
       ;
   }
 
